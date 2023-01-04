@@ -1,0 +1,89 @@
+body{
+	margin: 0;
+	padding-left: 100px;
+	padding-right: 100px;
+}
+header{
+	width: 100%;
+	display: flex;
+    justify-content: space-around;
+    padding-top: 10px;
+}
+header img{
+	height: 120px;
+}
+.research{
+	height: 50px;
+	background-color: #F2F2F2;
+	margin:10px;
+	border-radius: 10px;
+	display: flex;
+	font-size: 30px;
+	align-items: center;
+}
+.research input{
+	border: none;
+	background-color: #F2F2F2;
+	width: 100%;
+	font-size: 20px;
+	padding-left: 20px;
+}
+.research .fa-magnifying-glass{
+	padding-right: 20px;
+	cursor: pointer;
+}
+.sectionSearch{
+	display:flex;
+	color: white;
+	opacity: 0.6;
+	margin-bottom: 25px;
+}
+.sectionSearch .ingedient{
+	background-color: blue;
+}
+.sectionSearch .devices{
+	background-color: green;
+}
+.sectionSearch .utensils{
+	background-color: red;
+}
+.sectionSearch .utensils,.sectionSearch .devices,.sectionSearch .ingedient{
+	padding: 10px 20px 10px 20px;
+	margin: 20px;
+	border-radius: 10px;
+    cursor: pointer;
+}
+.fa-angle-up{
+    transform: rotate(180deg);
+    cursor: pointer;
+}
+.recipes{
+	display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 70px;
+    margin-top: 100px;
+}
+.mainDiv{
+	width: 300px;
+	height: 300px;
+	border-radius: 10px;
+	background-color: #d1d1d1;
+	position: relative;
+}
+.bottomDiv{
+	background-color: #f2f2f2;
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	height: 50%;
+	width: 100%;
+	position: absolute;
+	bottom: 0px;
+}
+.bottomDiv .titleReciper{
+	display: flex;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+.bottomDiv .titleReciper span{
+	font-weight: normal;
+}
