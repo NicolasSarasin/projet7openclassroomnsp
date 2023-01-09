@@ -5,11 +5,21 @@ async function getData() {
 }
 
 async function getRecipesData() {
+	const recipers = (await getData()).recipers;
+    console.log(recipers);
 
+    // et bien retourner le tableau photographers seulement une fois
+    return [...recipers];
 }
 
 async function getReciperData(id) {
 
+}
+
+function algorithmic(){
+	const resersh1 = document.getElementById("ingredient");
+	const resersh2 = document.getElementById("devices");
+	const resersh3 = document.getElementById("utensils");
 }
 
 function recipersFactory(data){

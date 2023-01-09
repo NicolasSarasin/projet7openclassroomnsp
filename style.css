@@ -38,7 +38,7 @@ header img{
 	opacity: 0.6;
 	margin-bottom: 25px;
 }
-.sectionSearch .ingedient{
+.sectionSearch .ingredient{
 	background-color: blue;
 }
 .sectionSearch .devices{
@@ -47,7 +47,7 @@ header img{
 .sectionSearch .utensils{
 	background-color: red;
 }
-.sectionSearch .utensils,.sectionSearch .devices,.sectionSearch .ingedient{
+.sectionSearch .utensils,.sectionSearch .devices,.sectionSearch .ingredient{
 	padding: 10px 20px 10px 20px;
 	margin: 20px;
 	border-radius: 10px;
