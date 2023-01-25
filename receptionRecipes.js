@@ -12,14 +12,14 @@ async function getRecipesData() {
     return [...recipers];
 }
 
-async function getReciperData(id) {
+/*async function getReciperData(id) {
 
-}
+}*/
 
 function algorithmic(){
-	const resersh1 = document.getElementById("ingredient");
-	const resersh2 = document.getElementById("devices");
-	const resersh3 = document.getElementById("utensils");
+	const research1 = document.getElementById("ingredient");
+	const research2 = document.getElementById("devices");
+	const research3 = document.getElementById("utensils");
 }
 
 function recipersFactory(data){
