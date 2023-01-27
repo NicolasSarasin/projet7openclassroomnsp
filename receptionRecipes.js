@@ -43,7 +43,7 @@ function recipersFactory(data){
 		reciperDiv.appendChild(span);
 		return displayResipers;
 	}
-	return{getRecipersCardDOM};
+	return{name, getRecipersCardDOM};
 }
 
 async function displayRecipersData(){

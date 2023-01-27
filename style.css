@@ -38,24 +38,39 @@ header img{
 	opacity: 0.6;
 	margin-bottom: 25px;
 }
-.sectionSearch .ingredient{
+.sectionSearch div{
+	width:200px;
+	height:66px;
+}
+.sectionSearch .ingredient ,
+.sectionSearch .ingredient .inputIngredient{
 	background-color: blue;
 }
-.sectionSearch .devices /*.sectionSearch .devices .inputDevice*/{
+
+.sectionSearch .devices ,
+.sectionSearch .devices .inputDevice{
 	background-color: green;
 }
-/*.sectionSearch .devices .inputDevice{
+.sectionSearch .devices .inputDevice,
+.sectionSearch .ingredient .inputIngredient{
 	border:none;
+	font-size: 25px;
+	width:75%;
+}
+.sectionSearch .devices .inputDevice::placeholder,
+.sectionSearch .ingredient .inputIngredient::placeholder{
 	color: white;
+	opacity: 1;
+}
+.sectionSearch .devices .fa-angle-up,.sectionSearch .ingredient .fa-angle-up{
 	font-size: 25px;
 }
-.sectionSearch .devices .fa-angle-up{
-	font-size: 25px;
-}*/
 .sectionSearch .utensils{
 	background-color: red;
 }
-.sectionSearch .utensils,.sectionSearch .devices,.sectionSearch .ingredient{
+.sectionSearch .utensils,
+.sectionSearch .devices,
+.sectionSearch .ingredient{
 	padding: 10px 20px 10px 20px;
 	margin: 20px;
 	border-radius: 10px;
