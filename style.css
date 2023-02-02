@@ -1,114 +1,140 @@
-body{
-	margin: 0;
-	padding-left: 100px;
-	padding-right: 100px;
+body {
+    margin: 0;
+    padding-left: 100px;
+    padding-right: 100px;
 }
-header{
-	width: 100%;
-	display: flex;
+
+header {
+    width: 100%;
+    display: flex;
     justify-content: space-around;
     padding-top: 10px;
 }
-header img{
-	height: 120px;
-}
-.research{
-	height: 50px;
-	background-color: #F2F2F2;
-	margin:10px;
-	border-radius: 10px;
-	display: flex;
-	font-size: 30px;
-	align-items: center;
-}
-.research input{
-	border: none;
-	background-color: #F2F2F2;
-	width: 100%;
-	font-size: 20px;
-	padding-left: 20px;
-}
-.research .fa-magnifying-glass{
-	padding-right: 20px;
-	cursor: pointer;
-}
-.sectionSearch{
-	display:flex;
-	color: white;
-	opacity: 0.6;
-	margin-bottom: 25px;
-}
-.sectionSearch div{
-	width:200px;
-	height:66px;
-}
-.sectionSearch .ingredient ,
-.sectionSearch .ingredient .inputIngredient{
-	background-color: blue;
+
+header img {
+    height: 120px;
 }
 
-.sectionSearch .devices ,
-.sectionSearch .devices .inputDevice{
-	background-color: green;
+.research {
+    height: 50px;
+    background-color: #f2f2f2;
+    margin: 10px;
+    border-radius: 10px;
+    display: flex;
+    font-size: 30px;
+    align-items: center;
 }
-.sectionSearch .devices .inputDevice,
-.sectionSearch .ingredient .inputIngredient{
-	border:none;
-	font-size: 25px;
-	width:75%;
+
+.research input {
+    border: none;
+    background-color: #f2f2f2;
+    width: 100%;
+    font-size: 20px;
+    padding-left: 20px;
 }
-.sectionSearch .devices .inputDevice::placeholder,
-.sectionSearch .ingredient .inputIngredient::placeholder{
-	color: white;
-	opacity: 1;
-}
-.sectionSearch .devices .fa-angle-up,.sectionSearch .ingredient .fa-angle-up{
-	font-size: 25px;
-}
-.sectionSearch .utensils{
-	background-color: red;
-}
-.sectionSearch .utensils,
-.sectionSearch .devices,
-.sectionSearch .ingredient{
-	padding: 10px 20px 10px 20px;
-	margin: 20px;
-	border-radius: 10px;
+
+.research .fa-magnifying-glass {
+    padding-right: 20px;
     cursor: pointer;
 }
-.fa-angle-up{
+
+.sectionSearch {
+    display: flex;
+    color: white;
+    margin-bottom: 25px;
+}
+
+.sectionSearch div {
+    width: 200px;
+    height: 60px;
+}
+
+.sectionSearch .ingredient,
+.sectionSearch .ingredient .inputIngredient {
+    background-color: #3282f7;
+}
+
+.sectionSearch .devices,
+.sectionSearch .devices .inputDevice {
+    background-color: #68d9a4;
+}
+
+.sectionSearch .utensils,
+.sectionSearch .utensils .inpUtensil {
+    background-color: #ed6454;
+}
+
+.sectionSearch .devices .inputDevice,
+.sectionSearch .ingredient .inputIngredient,
+.sectionSearch .utensils .inpUtensil {
+    border: none;
+    color: white;
+    font-size: 25px;
+    width: 75%;
+}
+
+.sectionSearch .devices .inputDevice::placeholder,
+.sectionSearch .ingredient .inputIngredient::placeholder,
+.sectionSearch .utensils .inpUtensil::placeholder {
+    color: white;
+    opacity: 1;
+}
+
+.sectionSearch .devices .fa-angle-up,
+.sectionSearch .ingredient .fa-angle-up,
+.sectionSearch .utensils .fa-angle-up {
+    font-size: 25px;
+}
+
+.sectionSearch .utensils,
+.sectionSearch .devices,
+.sectionSearch .ingredient {
+    padding: 25px 20px 0px 20px;
+    margin: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.fa-angle-up {
     transform: rotate(180deg);
     cursor: pointer;
 }
-.recipes{
-	display: grid;
+
+.recipes {
+    display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 30px;
     margin-top: 100px;
+    margin-bottom: 25px;
 }
-.recipes .mainDiv article{
-	width: 100%;
+
+.recipes .mainDiv article {
+    width: 100%;
 }
-.mainDiv{
-	height: 300px;
-	border-radius: 10px;
-	background-color: #d1d1d1;
-	position: relative;
+
+.mainDiv {
+    height: 400px;
+    border-radius: 10px;
+    background-color: #d1d1d1;
+    position: relative;
 }
-.bottomDiv{
-	background-color: #f2f2f2;
-	border-bottom-right-radius: 10px;
-	border-bottom-left-radius: 10px;
-	height: 50%;
-	width: 100%;
-	position: absolute;
-	bottom: 0px;
+
+.bottomDiv {
+    background-color: #f2f2f2;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    height: 50%;
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
 }
-.bottomDiv .titleReciper{
-	display: flex;
-	padding-left: 10px;
-	padding-right: 10px;
+
+.bottomDiv .titleReciper {
+    display: flex;
+    padding-left: 10px;
+    padding-right: 10px;
 }
-.bottomDiv .titleReciper span{
-	font-weight: normal;
+
+.bottomDiv .titleReciper span {
+    font-weight: normal;
 }
