@@ -97,7 +97,40 @@ header img {
 
 .fa-angle-up {
     transform: rotate(180deg);
+    animation-duration: 1s;
+    animation-name: rotationAngle;
     cursor: pointer;
+}
+
+.fa-angle-up:active {
+    transform: rotate(0deg);
+    animation-duration: 1s;
+    animation-name: rotationAngleInvert;
+    cursor: pointer;
+}
+@keyframes rotationAngle {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(180deg);
+    }
+}
+
+@keyframes rotationAngleInvert {
+    0% {
+        transform: rotate(180deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.spanH2 {
+    font-weight: normal;
+    padding-left: 10px;
 }
 
 .recipes {
@@ -117,6 +150,7 @@ header img {
     border-radius: 10px;
     background-color: #d1d1d1;
     position: relative;
+    cursor: pointer;
 }
 
 .bottomDiv {
@@ -127,6 +161,12 @@ header img {
     width: 100%;
     position: absolute;
     bottom: 0px;
+}
+
+.bottomDiv .title {
+    /*display: flex;
+    justify-content: space-between;*/
+    padding-right: 10px;
 }
 
 .bottomDiv .titleReciper {
