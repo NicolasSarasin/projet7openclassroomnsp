@@ -21,7 +21,7 @@ function algorithmic() {
     const research3 = document.getElementById("utensils");
     if (research1) {
     } else if (research2) {
-    } else {
+    } else if (research3) {
     }
 }
 

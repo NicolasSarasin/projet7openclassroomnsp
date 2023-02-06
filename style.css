@@ -169,6 +169,14 @@ header img {
     padding-right: 10px;
 }
 
+.bottomDiv .divFooter {
+    display: flex;
+}
+
+.divChildFooter {
+    font-size: 1.5em;
+}
+
 .bottomDiv .titleReciper {
     display: flex;
     padding-left: 10px;
