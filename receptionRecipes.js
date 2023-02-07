@@ -15,7 +15,7 @@ async function getRecipesData() {
 /*async function getReciperData(id) {	
 }*/
 
-function algorithmic() {
+/*function algorithmic() {
     const research1 = document.getElementById("ingredient");
     const research2 = document.getElementById("devices");
     const research3 = document.getElementById("utensils");
@@ -23,7 +23,7 @@ function algorithmic() {
     } else if (research2) {
     } else if (research3) {
     }
-}
+}*/
 
 function recipersFactory(data) {
     const { name, ingredient, quantity, unit } = data;
@@ -46,7 +46,7 @@ function recipersFactory(data) {
         reciperDiv.appendChild(span);
         return displayResipers;
     }
-    return { name, getRecipersCardDOM };
+    return { getRecipersCardDOM };
 }
 
 async function displayRecipersData() {
