@@ -26,27 +26,26 @@ async function getRecipesData() {
 }*/
 
 function recipersFactory(data) {
-    const { name, ingredient, quantity, unit } = data;
+    const { name, time, ingredient, quantity, unit, description } = data;
     function getRecipersCardDOM() {
-        const displayResipers = document.createElement("article");
-        const generalDiv = document.createElement("div");
-        const reciperDiv = document.createElement("div");
-        const name = document.createElement("h1");
-        const titleReciper = document.createElement("h1");
-        const span = document.createElement("span");
-        generalDiv.classList.add("mainDiv");
-        reciperDiv.classList.add("bottomDiv");
-        name.textContent = name;
+        const displayResipers = document.getElementById("mainDiv");
+        const reciperDiv = document.getElementById("bottomDiv");
+        const name = document.getElementById("title");
+        const titleReciper = document.getElementById("titleReciper");
+        const span = document.getElementById("spanRecipers");
+        const description = document.getElementById("paragrapheFooter");
+        name.textContent = name + time;
         titleReciper.textContent = ingredient + ": ";
         span.textContent = quantity + unit;
-        displayResipers.appendChild(generalDiv);
+        description.textContent = description;
         displayResipers.appendChild(reciperDiv);
         reciperDiv.appendChild(name);
         reciperDiv.appendChild(titleReciper);
         reciperDiv.appendChild(span);
+        reciperDiv.appendChild(description);
         return displayResipers;
     }
-    return { getRecipersCardDOM };
+    return { name, description, getRecipersCardDOM };
 }
 
 async function displayRecipersData() {
