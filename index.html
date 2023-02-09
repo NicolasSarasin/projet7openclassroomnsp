@@ -31,32 +31,32 @@
                 placeholder="Recherche d'une recette"
             /><i
                 class="fa-solid fa-magnifying-glass"
-                onclick="recipersFactory()"
+                onclick="recipersFactory(this)"
             ></i>
         </form>
         <section class="sectionSearch">
-            <div class="ingredient" id="ingredient">
+            <form class="ingredient" id="ingredient">
                 <input class="inputIngredient" placeholder="Ingrédients" /><i
                     class="fa fa-angle-up"
                 ></i>
-            </div>
-            <div class="devices" id="devices">
+            </form>
+            <form class="devices" id="devices">
                 <input class="inputDevice" placeholder="Appareils" /><i
                     class="fa fa-angle-up"
                 ></i>
-            </div>
-            <div class="utensils" id="utensils">
+            </form>
+            <form class="utensils" id="utensils">
                 <input class="inpUtensil" placeholder="Ustensiles" /><i
                     class="fa fa-angle-up"
                 ></i>
-            </div>
+            </form>
         </section>
         <section class="recipes">
-            <article class="mainDiv" id="mainDiv">
+            <article class="mainDiv">
                 <div class="bottomDiv" id="bottomDiv">
                     <h2 class="title" id="title">
                         <span class="spanH2" id="spanH2">test</span>
-                        <i class="fa-regular fa-clock"> </i>10 min
+                        <span><i class="fa-regular fa-clock"> </i>10 min</span>
                     </h2>
                     <div class="divFooter" id="divFooter">
                         <div class="divChildFooter" id="divChildFooter">
@@ -70,7 +70,7 @@
                             </h1>
                         </div>
                         <div class="divChildFooter2" id="divChildFooter2">
-                            <p id="paragrapheFooter">
+                            <p class="paragrapheFooter" id="paragrapheFooter">
                                 ceci est un deuxieme test
                             </p>
                         </div>
