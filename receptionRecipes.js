@@ -1,49 +1,58 @@
 async function getData() {
     const response = await fetch("recipes.js");
-    const data = await response.js();
+    const data = await response.json();
     return data;
 }
 
 async function getRecipesData() {
-    const recipers = (await getData()).recipers;
+    const recipers = (await getData()).recipes;
     console.log(recipers);
 
     // return recipers tab one time
     return [...recipers];
 }
 
-/*async function getReciperData(id) {	
-}*/
+window.onload = function () {
+    init();
+};
 
 function algorithmic() {
     //function for the algorithm with the research area
     const research1 = document.getElementById("ingredient");
     const research2 = document.getElementById("devices");
     const research3 = document.getElementById("utensils");
+
     if (research1) {
+        // if it's the reseach 1
         recipersFactory(research1);
+        //getRecipesData()
     } else if (research2) {
-        let devices = [];
+        // if it's the reseach 2
+        let devices = []; // this variable content a tab
         recipersFactory(devices);
+        //getRecipesData()
     } else if (research3) {
+        // if it's the reseach 3
         let utensils = [];
         recipersFactory(utensils);
+        //getRecipesData()
     }
-    //return;
+    return research1 || research2 || research3;
 }
 
 function recipersFactory(data) {
+    //this is a function for the tab of recipers
     const { name, time, ingredients, quantity, unit, description } = data;
     function getRecipersCardDOM() {
-        const article = document.createElement("article");
-        article.className = "mainDiv"; //create an article balise
+        const article = document.createElement("article"); //create an article balise
+        article.className = "mainDiv"; //this article take name class mainDiv
 
         const div1 = document.createElement("div"); //create the first div balise
         div1.className = "bottomDiv"; //this div take name class bottomDiv
         article.appendChild(div1);
 
         const h2 = document.createElement("h2"); //create the h2 balise
-        h2.className = "title";
+        h2.className = "title"; //this h2 take name class title
         div1.appendChild(h2);
         const span = document.createElement("span"); //create the first span balise
         span.className = "spanH2"; //this span take name class spanH2
@@ -51,8 +60,8 @@ function recipersFactory(data) {
         span.textContent = name;
         const span2 = document.createElement("span"); //create the second span balise
         h2.appendChild(span2);
-        const icon = document.createElement("i");
-        icon.className = "fa-regular fa-clock";
+        const icon = document.createElement("i"); //create the icon balise
+        icon.className = "fa-regular fa-clock"; //this icon balise take name class fa-regular fa-clock
         span2.appendChild(icon);
         const text1 = document.createTextNode(time); //create the first textNode
         span2.appendChild(text1);
@@ -93,10 +102,10 @@ function recipersFactory(data) {
 
         return article;
     }
-    return { name, description, getRecipersCardDOM };
+    return { name, description, getRecipersCardDOM }; //return name, description and the function getRecipersCardDom
 }
 
-async function displayRecipersData() {
+async function displayRecipersData(recipes) {
     const recipersSection = document.querySelector(".recipes");
     recipersSection.innerHTML = "";
     recipes.forEach((recipers) => {
@@ -107,6 +116,7 @@ async function displayRecipersData() {
 }
 
 async function init() {
-    // Récupère les datas
-    displayRecipersData();
+    // retrive datas
+    const { recipes } = await getRecipesData();
+    displayRecipersData(recipes);
 }
