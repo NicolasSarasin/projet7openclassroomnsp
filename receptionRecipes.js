@@ -13,6 +13,7 @@ async function getRecipesData() {
 }
 
 window.onload = function () {
+    //this function can run if it's a window.onload
     init();
 };
 
@@ -22,16 +23,16 @@ function algorithmic() {
     const research2 = document.getElementById("devices");
     const research3 = document.getElementById("utensils");
 
-    if (research1) {
+    if ((research1 = fetch("recipes.js"))) {
         // if it's the reseach 1
         recipersFactory(research1);
         //getRecipesData()
-    } else if (research2) {
+    } else if ((research2 = fetch("recipes.js"))) {
         // if it's the reseach 2
         let devices = []; // this variable content a tab
         recipersFactory(devices);
         //getRecipesData()
-    } else if (research3) {
+    } else if ((research3 = fetch("recipes.js"))) {
         // if it's the reseach 3
         let utensils = [];
         recipersFactory(utensils);
