@@ -22,23 +22,23 @@ function algorithmic() {
     const research1 = document.getElementById("ingredient");
     const research2 = document.getElementById("devices");
     const research3 = document.getElementById("utensils");
-
+    //condition with 3 area of research
     if ((research1 = fetch("recipes.js"))) {
         // if it's the reseach 1
         recipersFactory(research1);
-        //getRecipesData()
+        getRecipesData(); //take two functions for each conditions -> to see with the mentor
     } else if ((research2 = fetch("recipes.js"))) {
         // if it's the reseach 2
         let devices = []; // this variable content a tab
         recipersFactory(devices);
-        //getRecipesData()
+        getRecipesData();
     } else if ((research3 = fetch("recipes.js"))) {
         // if it's the reseach 3
         let utensils = [];
         recipersFactory(utensils);
-        //getRecipesData()
+        getRecipesData();
     }
-    return research1 || research2 || research3;
+    return research1 || research2 || research3; // return one of these three research of this algorithm -> to see too with the mentor
 }
 
 function recipersFactory(data) {
