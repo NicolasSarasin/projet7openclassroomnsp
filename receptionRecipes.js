@@ -14,7 +14,7 @@ async function getRecipesData() {
 
 window.onload = function () {
     //this function can run if it's a window.onload
-    init();
+    init(); //function init() in the window.onload
 };
 
 function algorithmic() {
@@ -23,20 +23,27 @@ function algorithmic() {
     const research2 = document.getElementById("devices");
     const research3 = document.getElementById("utensils");
     //condition with 3 area of research
-    if ((research1 = fetch("recipes.js"))) {
+    if (research1) {
         // if it's the reseach 1
-        recipersFactory(research1);
-        getRecipesData(); //take two functions for each conditions -> to see with the mentor
+        getRecipesData();
+        if (research1.lenght > 3) {
+            recipersFactory(ingredient);
+            filter();
+        }
     } else if ((research2 = fetch("recipes.js"))) {
-        // if it's the reseach 2
-        let devices = []; // this variable content a tab
-        recipersFactory(devices);
+        // else if it's the reseach 2
         getRecipesData();
+        if (research2.lenght > 3) {
+            recipersFactory(devices);
+            filter();
+        }
     } else if ((research3 = fetch("recipes.js"))) {
-        // if it's the reseach 3
-        let utensils = [];
-        recipersFactory(utensils);
+        // else if it's the reseach 3
         getRecipesData();
+        if (research3.lenght > 3) {
+            recipersFactory(utensils);
+            filter(); //function filter for there three area receasch
+        }
     }
     return research1 || research2 || research3; // return one of these three research of this algorithm -> to see too with the mentor
 }
