@@ -22,30 +22,57 @@ function algorithmic() {
     const research1 = document.getElementById("ingredient");
     const research2 = document.getElementById("devices");
     const research3 = document.getElementById("utensils");
+    const arrowResearch = document.getElementById("arrow");
     //condition with 3 area of research
     if (research1) {
         // if it's the reseach 1
         getRecipesData();
+        if (arrowResearch.onclick()) {
+            //if the arrow is clicked
+        }
         if (research1.lenght > 3) {
             recipersFactory(ingredient);
-            filter();
+            filtering();
         }
-    } else if ((research2 = fetch("recipes.js"))) {
+    } else if (research2) {
         // else if it's the reseach 2
         getRecipesData();
+        if (arrowResearch.onclick()) {
+            //if the arrow is clicked
+        }
         if (research2.lenght > 3) {
             recipersFactory(devices);
-            filter();
+            filtering();
         }
-    } else if ((research3 = fetch("recipes.js"))) {
+    } else if (research3) {
         // else if it's the reseach 3
         getRecipesData();
+        if (arrowResearch.onclick()) {
+            //if the arrow is clicked
+        }
         if (research3.lenght > 3) {
             recipersFactory(utensils);
-            filter(); //function filter for there three area receasch
+            filtering(); //function filter for there three area receasch
         }
     }
+    //reduce, map
     return research1 || research2 || research3; // return one of these three research of this algorithm -> to see too with the mentor
+}
+
+function filtering() {
+    function open() {
+        //const optionList;
+        //const Ingredient;
+        //const Device;
+        //const Utensil;
+    }
+    function close() {
+        //const optionList;
+        //const Ingredient;
+        //const Device;
+        //const Utensil;
+    }
+    return { open, close };
 }
 
 function recipersFactory(data) {
