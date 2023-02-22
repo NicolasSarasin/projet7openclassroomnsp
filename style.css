@@ -42,6 +42,7 @@ header img {
     display: flex;
     color: white;
     margin-bottom: 25px;
+    margin-left: -10px;
 }
 
 .sectionSearch form {

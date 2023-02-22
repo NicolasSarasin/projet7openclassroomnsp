@@ -92,6 +92,7 @@ function filtering() {
         const Device = document.getElementById("devices");
         const Utensil = document.getElementById("utensils");
         if (Ingredient) {
+            //condition with constents variables
         } else if (Device) {
         } else if (Utensil) {
         }
@@ -103,6 +104,7 @@ function filtering() {
         const Device = document.getElementById("devices");
         const Utensil = document.getElementById("utensils");
         if (Ingredient) {
+            //condition with constents variables
         } else if (Device) {
         } else if (Utensil) {
         }
