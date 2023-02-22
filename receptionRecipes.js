@@ -1,4 +1,5 @@
 async function getData() {
+    // formData for Javascript document
     const response = await fetch("recipes.js");
     const data = await response.json();
     return data;
@@ -23,24 +24,38 @@ function algorithmic() {
     const research2 = document.getElementById("devices");
     const research3 = document.getElementById("utensils");
     const arrowResearch = document.getElementById("arrow");
-    //condition with 3 area of research
+    //condition with 3 area of research(ingredients, devices, utensils)
     if (research1) {
         // if it's the reseach 1
         getRecipesData();
         if (arrowResearch.onclick()) {
             //if the arrow is clicked
+            research1.style.height = "250px"; //css height for this area research
+            research1.style.width = "750px"; //css width for this area research
+            open(); //use function open for three arrows area research
+        } else {
+            research1.style.height = "31px";
+            research1.style.width = "250px";
+            close();
         }
-        if (research1.lenght > 3) {
+        if (research1.lenght >= 3) {
             recipersFactory(ingredient);
-            filtering();
+            filtering(); //For there three area research, they use this function
         }
     } else if (research2) {
         // else if it's the reseach 2
         getRecipesData();
         if (arrowResearch.onclick()) {
             //if the arrow is clicked
+            research2.style.height = "250px"; //css height for this area research
+            research2.style.width = "750px"; //css width for this area research
+            open();
+        } else {
+            research2.style.height = "31px";
+            research2.style.width = "250px";
+            close();
         }
-        if (research2.lenght > 3) {
+        if (research2.lenght >= 3) {
             recipersFactory(devices);
             filtering();
         }
@@ -49,8 +64,17 @@ function algorithmic() {
         getRecipesData();
         if (arrowResearch.onclick()) {
             //if the arrow is clicked
+            research3.style.height = "250px"; //css height for this area research
+            research3.style.width = "750px"; //css width for this area research
+            open();
+        } else {
+            //else if the arrow is not clicked or re-clicked
+            research3.style.height = "31px";
+            research3.style.width = "250px";
+            close();
         }
-        if (research3.lenght > 3) {
+        if (research3.lenght >= 3) {
+            //if the research lenght have 3 caracters
             recipersFactory(utensils);
             filtering(); //function filter for there three area receasch
         }
@@ -58,21 +82,32 @@ function algorithmic() {
     //reduce, map
     return research1 || research2 || research3; // return one of these three research of this algorithm -> to see too with the mentor
 }
-
+//const tag for function filtering (function open and close)
 function filtering() {
+    //function filtering with two funtion : open and close
     function open() {
-        //const optionList;
-        //const Ingredient;
-        //const Device;
-        //const Utensil;
+        // this function is the opening of tags of one of areas research
+        const optionList = ""; // make four variables in this fonction, like function close
+        const Ingredient = document.getElementById("ingredient");
+        const Device = document.getElementById("devices");
+        const Utensil = document.getElementById("utensils");
+        if (Ingredient) {
+        } else if (Device) {
+        } else if (Utensil) {
+        }
     }
     function close() {
-        //const optionList;
-        //const Ingredient;
-        //const Device;
-        //const Utensil;
+        // this function is the closing of tags of one of areas research
+        const optionList = ""; // make four variables in this fonction, like function open
+        const Ingredient = document.getElementById("ingredient");
+        const Device = document.getElementById("devices");
+        const Utensil = document.getElementById("utensils");
+        if (Ingredient) {
+        } else if (Device) {
+        } else if (Utensil) {
+        }
     }
-    return { open, close };
+    return { open, close }; //return there two functions for the function algorithmic
 }
 
 function recipersFactory(data) {
