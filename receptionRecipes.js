@@ -1,18 +1,3 @@
-async function getData() {
-    // formData for Javascript document
-    const response = await fetch("recipes.js");
-    const data = await response.json();
-    return data;
-}
-
-async function getRecipesData() {
-    const recipers = (await getData()).recipes;
-    console.log(recipers);
-
-    // return recipers tab one time
-    return [...recipers];
-}
-
 window.onload = function () {
     //this function can run if it's a window.onload
     init(); //function init() in the window.onload
@@ -84,6 +69,17 @@ function algorithmic() {
 }
 //const tag for function filtering (function open and close)
 function filtering() {
+    const r = [...recipes];
+    const searchValue = document.getElementById("searchIngredient");
+    if (searchValue.length >= 3) {
+        //if the research lenght have 3 caracters
+        for (var i = r.length - 1; i <= 0; i--) {
+            if ((r[i] /= searchValue)) {
+                //we delete the recipe of the table r
+                r.splice(i);
+            }
+        }
+    }
     //function filtering with two funtion : open and close
     function open() {
         // this function is the opening of tags of one of areas research
@@ -189,6 +185,6 @@ async function displayRecipersData(recipes) {
 
 async function init() {
     // retrive datas
-    const { recipes } = await getRecipesData();
+    //const { recipes } = await getRecipesData();
     displayRecipersData(recipes);
 }
