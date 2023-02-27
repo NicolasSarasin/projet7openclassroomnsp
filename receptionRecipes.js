@@ -3,7 +3,7 @@ window.onload = function () {
     init(); //function init() in the window.onload
 };
 
-function algorithmic() {
+/*function algorithmic() {
     //function for the algorithm with the research area
     const research1 = document.getElementById("ingredient");
     const research2 = document.getElementById("devices");
@@ -66,9 +66,9 @@ function algorithmic() {
     }
     //reduce, map
     return research1 || research2 || research3; // return one of these three research of this algorithm -> to see too with the mentor
-}
+}*/
 //const tag for function filtering (function open and close)
-function filtering() {
+async function filtering() {
     const r = [...recipes];
     const searchValue = document.getElementById("searchIngredient");
     if (searchValue.length >= 3) {
@@ -80,10 +80,54 @@ function filtering() {
             }
         }
     }
-    //function filtering with two funtion : open and close
+    //declaration of const variables for three areas research
+    const Ingredient = document.getElementById("ingredient");
+    const Device = document.getElementById("devices");
+    const Utensil = document.getElementById("utensils");
+    const arrowResearch = document.getElementById("arrow");
+    const tag = ""; //tag of one of three area research
+    if (Ingredient) {
+        //if it's the ingredients
+        if ((arrowResearch = onclick())) {
+            Ingredient.style.height = "250px"; //css height for this area research
+            Ingredient.style.width = "750px"; //css width for this area research
+            if ((tag = onclick())) {
+                tag; //the tag have the since color (text and background) of the area research
+            }
+        } else {
+            Ingredient.style.height = "31px"; //css height for this area research
+            Ingredient.style.width = "250px"; //css width for this area research
+        }
+    } else if (Device) {
+        //if it's the devices
+        if ((arrowResearch = onclick())) {
+            Device.style.height = "250px"; //css height for this area research
+            Device.style.width = "750px"; //css width for this area research
+            if ((tag = onclick())) {
+                //tag.delete; //the tag have the since color (text and background) of the area research
+                tag;
+            }
+        } else {
+            Device.style.height = "31px"; //css height for this area research
+            Device.style.width = "250px"; //css width for this area research
+        }
+    } else if (Utensil) {
+        //if it's the utensils
+        if ((arrowResearch = onclick())) {
+            Utensil.style.height = "250px"; //css height for this area research
+            Utensil.style.width = "750px"; //css width for this area research
+            if ((tag = onclick())) {
+                tag; //the tag have the since color (text and background) of the area research
+            }
+        } else {
+            Utensil.style.height = "31px"; //css height for this area research
+            Utensil.style.width = "250px"; //css width for this area research
+        }
+    }
+    //two functions (open and close) to open and to close the area research (ingredient, device or utensil)
     function open() {
         // this function is the opening of tags of one of areas research
-        const optionList = ""; // make four variables in this fonction, like function close
+        //const optionList = ""; // make four variables in this fonction, like function close
         const Ingredient = document.getElementById("ingredient");
         const Device = document.getElementById("devices");
         const Utensil = document.getElementById("utensils");
@@ -95,7 +139,7 @@ function filtering() {
     }
     function close() {
         // this function is the closing of tags of one of areas research
-        const optionList = ""; // make four variables in this fonction, like function open
+        //const optionList = ""; // make four variables in this fonction, like function open
         const Ingredient = document.getElementById("ingredient");
         const Device = document.getElementById("devices");
         const Utensil = document.getElementById("utensils");
@@ -185,6 +229,6 @@ async function displayRecipersData(recipes) {
 
 async function init() {
     // retrive datas
-    //const { recipes } = await getRecipesData();
+    const { recipes } = await filtering();
     displayRecipersData(recipes);
 }

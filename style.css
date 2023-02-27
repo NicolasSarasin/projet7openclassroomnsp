@@ -52,16 +52,34 @@ header img {
 .sectionSearch .ingredient,
 .sectionSearch .ingredient .inputIngredient {
     background-color: #3282f7;
+    height: 31px;
+}
+
+.sectionSearch .ingredient:hover {
+    height: 250px;
+    width: 750px;
 }
 
 .sectionSearch .devices,
 .sectionSearch .devices .inputDevice {
     background-color: #68d9a4;
+    height: 31px;
+}
+
+.sectionSearch .devices:hover {
+    height: 250px;
+    width: 750px;
 }
 
 .sectionSearch .utensils,
 .sectionSearch .utensils .inpUtensil {
     background-color: #ed6454;
+    height: 31px;
+}
+
+.sectionSearch .utensils:hover {
+    height: 250px;
+    width: 750px;
 }
 
 .sectionSearch .devices .inputDevice,
