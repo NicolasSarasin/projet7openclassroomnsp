@@ -58,6 +58,8 @@ header img {
 .sectionSearch .ingredient:hover {
     height: 250px;
     width: 750px;
+    margin-bottom: -200px;
+    z-index: 3;
 }
 
 .sectionSearch .devices,
@@ -69,6 +71,8 @@ header img {
 .sectionSearch .devices:hover {
     height: 250px;
     width: 750px;
+    margin-bottom: -200px;
+    z-index: 3;
 }
 
 .sectionSearch .utensils,
@@ -80,6 +84,8 @@ header img {
 .sectionSearch .utensils:hover {
     height: 250px;
     width: 750px;
+    margin-bottom: -200px;
+    z-index: 3;
 }
 
 .sectionSearch .devices .inputDevice,
