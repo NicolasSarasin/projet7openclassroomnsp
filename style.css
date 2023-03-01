@@ -38,6 +38,13 @@ header img {
     cursor: pointer;
 }
 
+.sectionForm {
+    margin-top: 20px;
+    font-size: 26px;
+    display: flex;
+    justify-content: space-between;
+}
+
 .sectionSearch {
     display: flex;
     color: white;
