@@ -43,6 +43,11 @@ header img {
     font-size: 26px;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.sectionForm div {
+    width: 30%;
 }
 
 .sectionSearch {
@@ -54,6 +59,7 @@ header img {
 
 .sectionSearch form {
     width: 200px;
+    position: relative;
 }
 
 .sectionSearch .ingredient,
@@ -64,9 +70,18 @@ header img {
 
 .sectionSearch .ingredient:hover {
     height: 250px;
-    width: 750px;
+    min-width: 200px;
+    max-width: 750px; /*width of the area research*/
+    /*min-width: 200px;*/
     margin-bottom: -200px;
     z-index: 3;
+}
+
+.sectionSearch .ingredient:hover .fa-angle-up {
+    transform: rotate(0deg);
+    animation-duration: 1s;
+    animation-name: rotationAngleInvert;
+    cursor: pointer;
 }
 
 .sectionSearch .devices,
@@ -77,9 +92,17 @@ header img {
 
 .sectionSearch .devices:hover {
     height: 250px;
-    width: 750px;
+    width: 750px; /*width of the area research*/
+    /*min-width: 200px;*/
     margin-bottom: -200px;
     z-index: 3;
+}
+
+.sectionSearch .devices:hover .fa-angle-up {
+    transform: rotate(0deg);
+    animation-duration: 1s;
+    animation-name: rotationAngleInvert;
+    cursor: pointer;
 }
 
 .sectionSearch .utensils,
@@ -90,9 +113,17 @@ header img {
 
 .sectionSearch .utensils:hover {
     height: 250px;
-    width: 750px;
+    width: 750px; /*width of the area research*/
+    /*min-width: 200px;*/
     margin-bottom: -200px;
     z-index: 3;
+}
+
+.sectionSearch .utensils:hover .fa-angle-up {
+    transform: rotate(0deg);
+    animation-duration: 1s;
+    animation-name: rotationAngleInvert;
+    cursor: pointer;
 }
 
 .sectionSearch .devices .inputDevice,
@@ -117,6 +148,8 @@ header img {
 .sectionSearch .ingredient .fa-angle-up,
 .sectionSearch .utensils .fa-angle-up {
     font-size: 25px;
+    position: absolute;
+    right: 20px;
 }
 
 .sectionSearch .utensils,
