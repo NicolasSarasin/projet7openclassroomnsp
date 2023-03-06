@@ -71,6 +71,7 @@ header img {
 .sectionSearch .ingredient:hover {
     height: 250px;
     min-width: 200px;
+    /*width: 100%;*/
     max-width: 750px; /*width of the area research*/
     /*min-width: 200px;*/
     margin-bottom: -200px;
