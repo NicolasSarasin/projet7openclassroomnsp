@@ -41,13 +41,17 @@ header img {
 .sectionForm {
     margin-top: 20px;
     font-size: 26px;
-    display: flex;
+    /*display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
+    flex-wrap: wrap;*/
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
 }
 
 .sectionForm div {
     width: 30%;
+    white-space: nowrap;
 }
 
 .sectionSearch {
