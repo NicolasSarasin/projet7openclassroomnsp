@@ -19,6 +19,13 @@
             type="text/css"
         />
         <link rel="stylesheet" href="style.css" />
+        <script language="javascript">
+            function closeTag() {
+                //function to close tag (exemple:sugar)
+                const testTag = document.getElementById("testTag");
+                testTag.style.display = "none";
+            }
+        </script>
         <script
             src="https://kit.fontawesome.com/35fb32db18.js"
             crossorigin="anonymous"
@@ -39,6 +46,14 @@
                 onclick="recipersFactory(this)"
             ></i>
         </form>
+        <div class="testTag" id="testTag">
+            lait de coco
+            <i
+                class="fa-regular fa-circle-xmark"
+                id="testTagMark"
+                onclick="closeTag()"
+            ></i>
+        </div>
         <section class="sectionSearch">
             <form action="" class="ingredient" id="ingredient">
                 <input
