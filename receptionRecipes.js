@@ -86,13 +86,30 @@ function filtering() {
     const Utensil = document.getElementById("utensils");
     const arrowAreaResearch = document.getElementsByClassName(".fa-angle-up");
     const tag = ""; //tag of one of three area research
+    const sectionIngredient = document.getElementsByClassName(".sectionForm");
     //extraire les ingrédients de la liste de recette (r) et les remplirs dans le filtre ingrédient
     if (Ingredient) {
-        /*const sectionIngredient =
-            document.getElementsByClassName(".sectionForm");
+        /*const { ingredient } = data;
+
         const div = document.createElement("div");
-        sectionIngredient.appendChild(div);*/
+        div.textContent = ingredient;*/
+        //sectionIngredient.appendChild(div);
+    } else if (Device) {
+        /*const { appliance } = data;
+
+        const div = document.createElement("div");
+        div.textContent = appliance;*/
+        //sectionIngredient.appendChild(div);
+    } else {
+        /*const { utensils } = data;
+
+        const div = document.createElement("div");
+        div.textContent = utensils;*/
+        //sectionIngredient.appendChild(div);
     }
+    //div.className = "tagIngredient";
+    //div.className = "tagDevice";
+    //div.className = "tagUtensil";
     //extraire les appareils et les ustensils de la liste de recette (r) et les remplirs dans le filtre appareil et ustensile
     return r;
 }
