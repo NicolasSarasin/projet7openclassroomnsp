@@ -68,7 +68,7 @@ window.onload = function () {
     return research1 || research2 || research3; // return one of these three research of this algorithm -> to see too with the mentor
 }*/
 //const tag for function filtering (function open and close)
-async function filtering() {
+function filtering() {
     const r = [...recipes];
     const searchValue = document.getElementById("searchIngredient");
     if (searchValue.length >= 3) {
@@ -84,72 +84,23 @@ async function filtering() {
     const Ingredient = document.getElementById("ingredient");
     const Device = document.getElementById("devices");
     const Utensil = document.getElementById("utensils");
-    const arrowResearch = document.getElementById("arrow");
+    const arrowAreaResearch = document.getElementsByClassName(".fa-angle-up");
     const tag = ""; //tag of one of three area research
+    //extraire les ingrédients de la liste de recette (r) et les remplirs dans le filtre ingrédient
     if (Ingredient) {
-        //if it's the ingredients
-        if ((arrowResearch = onclick())) {
-            Ingredient.style.height = "250px"; //css height for this area research
-            Ingredient.style.width = "750px"; //css width for this area research
-            if ((tag = onclick())) {
-                tag; //the tag have the since color (text and background) of the area research
-            }
-        } else {
-            Ingredient.style.height = "31px"; //css height for this area research
-            Ingredient.style.width = "250px"; //css width for this area research
-        }
-    } else if (Device) {
-        //if it's the devices
-        if ((arrowResearch = onclick())) {
-            Device.style.height = "250px"; //css height for this area research
-            Device.style.width = "750px"; //css width for this area research
-            if ((tag = onclick())) {
-                //tag.delete; //the tag have the since color (text and background) of the area research
-                tag;
-            }
-        } else {
-            Device.style.height = "31px"; //css height for this area research
-            Device.style.width = "250px"; //css width for this area research
-        }
-    } else if (Utensil) {
-        //if it's the utensils
-        if ((arrowResearch = onclick())) {
-            Utensil.style.height = "250px"; //css height for this area research
-            Utensil.style.width = "750px"; //css width for this area research
-            if ((tag = onclick())) {
-                tag; //the tag have the since color (text and background) of the area research
-            }
-        } else {
-            Utensil.style.height = "31px"; //css height for this area research
-            Utensil.style.width = "250px"; //css width for this area research
-        }
+        /*const sectionIngredient =
+            document.getElementsByClassName(".sectionForm");
+        const div = document.createElement("div");
+        sectionIngredient.appendChild(div);*/
     }
-    //two functions (open and close) to open and to close the area research (ingredient, device or utensil)
-    function open() {
-        // this function is the opening of tags of one of areas research
-        //const optionList = ""; // make four variables in this fonction, like function close
-        const Ingredient = document.getElementById("ingredient");
-        const Device = document.getElementById("devices");
-        const Utensil = document.getElementById("utensils");
-        if (Ingredient) {
-            //condition with constents variables
-        } else if (Device) {
-        } else if (Utensil) {
-        }
-    }
-    function close() {
-        // this function is the closing of tags of one of areas research
-        //const optionList = ""; // make four variables in this fonction, like function open
-        const Ingredient = document.getElementById("ingredient");
-        const Device = document.getElementById("devices");
-        const Utensil = document.getElementById("utensils");
-        if (Ingredient) {
-            //condition with constents variables
-        } else if (Device) {
-        } else if (Utensil) {
-        }
-    }
-    return { open, close }; //return there two functions for the function algorithmic
+    //extraire les appareils et les ustensils de la liste de recette (r) et les remplirs dans le filtre appareil et ustensile
+    return r;
+}
+
+function closeTag(elt) {
+    //function to close tag (exemple:sugar)
+    const tag = elt.parentElement;
+    tag.parentElement.removeChild(tag);
 }
 
 function recipersFactory(data) {
@@ -175,7 +126,7 @@ function recipersFactory(data) {
         const icon = document.createElement("i"); //create the icon balise
         icon.className = "fa-regular fa-clock"; //this icon balise take name class fa-regular fa-clock
         span2.appendChild(icon);
-        const text1 = document.createTextNode(time); //create the first textNode
+        const text1 = document.createTextNode(time + " min"); //create the first textNode
         span2.appendChild(text1);
 
         const div2 = document.createElement("div"); //create the second div balise
@@ -188,7 +139,6 @@ function recipersFactory(data) {
         const h1 = document.createElement("h1"); //create the h1 balise
         h1.className = "titleReciper"; //this h1 take name class titleReciper
         div3.appendChild(h1);
-        const text2 = document.createTextNode(); //create the second textNode
         let temp = [];
         for (let i = 0; i < ingredients.length; i++) {
             let str = ingredients[i].ingredient;
@@ -201,7 +151,7 @@ function recipersFactory(data) {
             }
             temp.push(str);
         }
-        text2.textContent = temp.join(", ");
+        const text2 = document.createTextNode(temp.join(", ")); //create the second textNode
         h1.appendChild(text2);
 
         const div4 = document.createElement("div"); //create the fourth div balise
@@ -217,11 +167,12 @@ function recipersFactory(data) {
     return { name, description, getRecipersCardDOM }; //return name, description and the function getRecipersCardDom
 }
 
-async function displayRecipersData(recipes) {
+function displayRecipersData(data) {
     const recipersSection = document.querySelector(".recipes");
     recipersSection.innerHTML = "";
-    recipes.forEach((recipers) => {
-        const mediaModel = recipersFactory(recipes);
+    console.log(data);
+    data.forEach((recipe) => {
+        const mediaModel = recipersFactory(recipe);
         const userRecipersCardDOM = mediaModel.getRecipersCardDOM();
         recipersSection.appendChild(userRecipersCardDOM);
     });
@@ -229,6 +180,6 @@ async function displayRecipersData(recipes) {
 
 async function init() {
     // retrive datas
-    const { recipes } = await filtering();
-    displayRecipersData(recipes);
+    const filteredRecipies = filtering();
+    displayRecipersData(filteredRecipies);
 }

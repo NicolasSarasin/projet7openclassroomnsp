@@ -72,25 +72,32 @@ header img {
     height: 31px;
 }
 
-.testTag {
+.Tag {
     display: inline-flex;
     justify-content: space-between;
-    background-color: #3282f7;
     color: white;
     height: 31px;
-    min-width: 100px;
-    max-width: 1500px;
     padding: 15px 10px 15px 10px;
     border-radius: 10px;
     margin: 20px 10px 10px 10px;
     font-size: 24px;
-    /*position: relative;*/
 }
 
-/*.fa-circle-xmark {
-    position: absolute;
-    right: 10px;
-}*/
+.tagIngredient {
+    background-color: #3282f7;
+}
+
+.tagDevice {
+    background-color: #68d9a4;
+}
+
+.tagUtensil {
+    background-color: #ed6454;
+}
+
+.tagText {
+    padding-right: 5px;
+}
 
 .fa-circle-xmark:hover {
     cursor: pointer;
@@ -253,7 +260,7 @@ header img {
 }
 
 .mainDiv {
-    height: 400px;
+    height: 900px;
     border-radius: 10px;
     background-color: #d1d1d1;
     position: relative;

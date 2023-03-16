@@ -19,13 +19,6 @@
             type="text/css"
         />
         <link rel="stylesheet" href="style.css" />
-        <script language="javascript">
-            function closeTag() {
-                //function to close tag (exemple:sugar)
-                const testTag = document.getElementById("testTag");
-                testTag.style.display = "none";
-            }
-        </script>
         <script
             src="https://kit.fontawesome.com/35fb32db18.js"
             crossorigin="anonymous"
@@ -46,13 +39,23 @@
                 onclick="recipersFactory(this)"
             ></i>
         </form>
-        <div class="testTag" id="testTag">
-            lait de coco
-            <i
-                class="fa-regular fa-circle-xmark"
-                id="testTagMark"
-                onclick="closeTag()"
-            ></i>
+        <div id="tagsList">
+            <div class="Tag tagDevice">
+                <!--a tag that display an ingredient , a device or an utensil-->
+                <span class="tagText">coco</span>
+                <i
+                    class="fa-regular fa-circle-xmark"
+                    onclick="closeTag(this)"
+                ></i>
+            </div>
+            <div class="Tag tagIngredient">
+                <!--a tag that display an ingredient , a device or an utensil-->
+                <span class="tagText">Test de text en allongé</span>
+                <i
+                    class="fa-regular fa-circle-xmark"
+                    onclick="closeTag(this)"
+                ></i>
+            </div>
         </div>
         <section class="sectionSearch">
             <form action="" class="ingredient" id="ingredient">
@@ -60,7 +63,7 @@
                     type="search"
                     class="inputIngredient"
                     placeholder="Ingrédients"
-                /><i class="fa fa-angle-up" id="arrow"></i>
+                /><i class="fa fa-angle-up" id="arrow" onclick=""></i>
                 <section class="sectionForm">
                     <!--Section with a lot of tag created in Javascript or HTML-->
                     <div>lait de coco</div>
