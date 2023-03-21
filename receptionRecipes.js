@@ -89,23 +89,30 @@ function filtering() {
     const sectionIngredient = document.getElementsByClassName(".sectionForm");
     //extraire les ingrédients de la liste de recette (r) et les remplirs dans le filtre ingrédient
     if (Ingredient) {
-        /*const { ingredient } = data;
-
-        const div = document.createElement("div");
-        div.textContent = ingredient;*/
+        //Ingredient.forEach((r) => {
+        const { ingredient } = r; //create a second variable r for this area research
+        //console.log(r.ingredient);
+        const div = document.createElement("div"); //create an element div
+        div.textContent = ingredient; // this div have text content all ingredients of the area research
+        //});
         //sectionIngredient.appendChild(div);
+        //return r;
     } else if (Device) {
-        /*const { appliance } = data;
-
-        const div = document.createElement("div");
-        div.textContent = appliance;*/
+        /*const { appliance } = r;*/
+        //create an element div
+        //forEach((r[...]) => { const{appliance} = r
+        const div = document.createElement("div"); //create a second variable r for this area research
+        div.textContent = appliance; // this div have text content all appliances of the area research
+        //});
         //sectionIngredient.appendChild(div);
+        //return r;
     } else {
-        /*const { utensils } = data;
-
+        /*const { ustensils } = data;*/
+        //create an element div
         const div = document.createElement("div");
-        div.textContent = utensils;*/
+        div.textContent = ustensils; // this div have text content all ustensils of the area research
         //sectionIngredient.appendChild(div);
+        //return r;
     }
     //div.className = "tagIngredient";
     //div.className = "tagDevice";
