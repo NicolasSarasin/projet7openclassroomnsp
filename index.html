@@ -34,10 +34,9 @@
                 name="searchIngredient"
                 id="searchIngredient"
                 placeholder="Recherche d'une recette"
-            /><i
-                class="fa-solid fa-magnifying-glass"
-                onclick="recipersFactory(this)"
-            ></i>
+                oninput="filtering()"
+                value="co"
+            /><i class="fa-solid fa-magnifying-glass"></i>
         </form>
         <div id="tagsList">
             <div class="Tag tagDevice">
@@ -224,23 +223,7 @@
                         <span class="spanH2" id="spanH2">test</span>
                         <span><i class="fa-regular fa-clock"> </i>10 min</span>
                     </h2>
-                    <div class="divFooter" id="divFooter">
-                        <div class="divChildFooter" id="divChildFooter">
-                            <h1 class="titleReciper" id="titleReciper">
-                                ceci est un:<span
-                                    class="spanRecipers"
-                                    id="spanRecipers"
-                                >
-                                    test</span
-                                >
-                            </h1>
-                        </div>
-                        <div class="divChildFooter2" id="divChildFooter2">
-                            <p class="paragrapheFooter" id="paragrapheFooter">
-                                ceci est un deuxieme test
-                            </p>
-                        </div>
-                    </div>
+                    <div class="divFooter" id="divFooter"></div>
                 </div>
             </article>
         </section>

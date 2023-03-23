@@ -1,85 +1,29 @@
 window.onload = function () {
-    //this function can run if it's a window.onload
     init(); //function init() in the window.onload
 };
 
-/*function algorithmic() {
-    //function for the algorithm with the research area
-    const research1 = document.getElementById("ingredient");
-    const research2 = document.getElementById("devices");
-    const research3 = document.getElementById("utensils");
-    const arrowResearch = document.getElementById("arrow");
-    //condition with 3 area of research(ingredients, devices, utensils)
-    if (research1) {
-        // if it's the reseach 1
-        getRecipesData();
-        if (arrowResearch.onclick()) {
-            //if the arrow is clicked
-            research1.style.height = "250px"; //css height for this area research
-            research1.style.width = "750px"; //css width for this area research
-            open(); //use function open for three arrows area research
-        } else {
-            research1.style.height = "31px";
-            research1.style.width = "250px";
-            close();
-        }
-        if (research1.lenght >= 3) {
-            recipersFactory(ingredient);
-            filtering(); //For there three area research, they use this function
-        }
-    } else if (research2) {
-        // else if it's the reseach 2
-        getRecipesData();
-        if (arrowResearch.onclick()) {
-            //if the arrow is clicked
-            research2.style.height = "250px"; //css height for this area research
-            research2.style.width = "750px"; //css width for this area research
-            open();
-        } else {
-            research2.style.height = "31px";
-            research2.style.width = "250px";
-            close();
-        }
-        if (research2.lenght >= 3) {
-            recipersFactory(devices);
-            filtering();
-        }
-    } else if (research3) {
-        // else if it's the reseach 3
-        getRecipesData();
-        if (arrowResearch.onclick()) {
-            //if the arrow is clicked
-            research3.style.height = "250px"; //css height for this area research
-            research3.style.width = "750px"; //css width for this area research
-            open();
-        } else {
-            //else if the arrow is not clicked or re-clicked
-            research3.style.height = "31px";
-            research3.style.width = "250px";
-            close();
-        }
-        if (research3.lenght >= 3) {
-            //if the research lenght have 3 caracters
-            recipersFactory(utensils);
-            filtering(); //function filter for there three area receasch
-        }
-    }
-    //reduce, map
-    return research1 || research2 || research3; // return one of these three research of this algorithm -> to see too with the mentor
-}*/
-//const tag for function filtering (function open and close)
 function filtering() {
     const r = [...recipes];
-    const searchValue = document.getElementById("searchIngredient");
+    const searchValue = document.getElementById("searchIngredient").value;
+    //if the research lenght have 3 caracters
     if (searchValue.length >= 3) {
-        //if the research lenght have 3 caracters
-        for (var i = r.length - 1; i <= 0; i--) {
-            if ((r[i] /= searchValue)) {
-                //we delete the recipe of the table r
-                r.splice(i);
+        // loop through receipies in (r) to exclude the ones which don't match (searchValue)
+        for (var i = r.length - 1; i >= 0; i--) {
+            if (
+                r[i].name.indexOf(searchValue) < 0 &&
+                r[i].description.indexOf(searchValue) < 0 &&
+                !r[i].ingredients.some((ingredient) => {
+                    const ok = ingredient.ingredient.indexOf(searchValue) >= 0;
+                    return ok;
+                })
+            ) {
+                //we delete the recipe of the array r
+                r.splice(i, 1);
             }
         }
     }
+    displayRecipersData(r);
+    return r;
     //declaration of const variables for three areas research
     const Ingredient = document.getElementById("ingredient");
     const Device = document.getElementById("devices");
@@ -213,7 +157,5 @@ function displayRecipersData(data) {
 }
 
 async function init() {
-    // retrive datas
-    const filteredRecipies = filtering();
-    displayRecipersData(filteredRecipies);
+    filtering();
 }
