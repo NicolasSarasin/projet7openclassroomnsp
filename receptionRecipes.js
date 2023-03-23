@@ -86,32 +86,42 @@ function filtering() {
     const Utensil = document.getElementById("utensils");
     const arrowAreaResearch = document.getElementsByClassName(".fa-angle-up");
     const tag = ""; //tag of one of three area research
-    const sectionIngredient = document.getElementsByClassName(".sectionForm");
+    const sectionAreaResearch = document.getElementsByClassName(".sectionForm");
+
+    //Device.appendChild(sectionAreaResearch);
+    //Utensil.appendChild(sectionAreaResearch);
     //extraire les ingrédients de la liste de recette (r) et les remplirs dans le filtre ingrédient
     if (Ingredient) {
-        //Ingredient.forEach((r) => {
-        const { ingredient } = r; //create a second variable r for this area research
-        //console.log(r.ingredient);
-        const div = document.createElement("div"); //create an element div
-        div.textContent = ingredient; // this div have text content all ingredients of the area research
-        //});
-        //sectionIngredient.appendChild(div);
+        r.forEach((r) => {
+            //For each time that's an ingredient
+            const { ingredient } = r; //create a second variable r for this area research
+            //console.log(r.ingredient);
+            const div = document.createElement("div"); //create an element div
+            div.textContent = ingredient; // this div have text content all ingredients of the area research
+            //Ingredient.appendChild(sectionAreaResearch);
+            //sectionAreaResearch.appendChild(div);
+        });
+
         //return r;
     } else if (Device) {
-        /*const { appliance } = r;*/
         //create an element div
-        //forEach((r[...]) => { const{appliance} = r
-        const div = document.createElement("div"); //create a second variable r for this area research
-        div.textContent = appliance; // this div have text content all appliances of the area research
-        //});
+        r.forEach((r) => {
+            const { appliance } = r;
+            /*const { appliance } = r;*/
+            const div = document.createElement("div"); //create a second variable r for this area research
+            div.textContent = appliance; // this div have text content all appliances of the area research
+        });
         //sectionIngredient.appendChild(div);
         //return r;
     } else {
-        /*const { ustensils } = data;*/
-        //create an element div
-        const div = document.createElement("div");
-        div.textContent = ustensils; // this div have text content all ustensils of the area research
-        //sectionIngredient.appendChild(div);
+        r.forEach((r) => {
+            const { ustensils } = r;
+            /*const { ustensils } = data;*/
+            //create an element div
+            const div = document.createElement("div");
+            div.textContent = ustensils; // this div have text content all ustensils of the area research
+            //sectionIngredient.appendChild(div);
+        });
         //return r;
     }
     //div.className = "tagIngredient";
