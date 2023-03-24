@@ -22,9 +22,6 @@ function filtering() {
             }
         }
     }
-    displayRecipersData(r);
-    return r;
-    //declaration of const variables for three areas research
     const Ingredient = document.getElementById("ingredient");
     const Device = document.getElementById("devices");
     const Utensil = document.getElementById("utensils");
@@ -44,10 +41,15 @@ function filtering() {
             div.textContent = ingredient; // this div have text content all ingredients of the area research
             //Ingredient.appendChild(sectionAreaResearch);
             //sectionAreaResearch.appendChild(div);
+            //r.splice(i, 1);
         });
 
         //return r;
-    } else if (Device) {
+    }
+    displayRecipersData(r);
+    return r;
+    //declaration of const variables for three areas research
+    if (Device) {
         //create an element div
         r.forEach((r) => {
             const { appliance } = r;
@@ -72,7 +74,6 @@ function filtering() {
     //div.className = "tagDevice";
     //div.className = "tagUtensil";
     //extraire les appareils et les ustensils de la liste de recette (r) et les remplirs dans le filtre appareil et ustensile
-    return r;
 }
 
 function closeTag(elt) {
@@ -104,7 +105,7 @@ function recipersFactory(data) {
         const icon = document.createElement("i"); //create the icon balise
         icon.className = "fa-regular fa-clock"; //this icon balise take name class fa-regular fa-clock
         span2.appendChild(icon);
-        const text1 = document.createTextNode(time + " min"); //create the first textNode
+        const text1 = document.createTextNode(" " + time + " min"); //create the first textNode
         span2.appendChild(text1);
 
         const div2 = document.createElement("div"); //create the second div balise
