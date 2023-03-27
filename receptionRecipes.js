@@ -33,9 +33,9 @@ function filtering() {
     //Utensil.appendChild(sectionAreaResearch);
     //extraire les ingrédients de la liste de recette (r) et les remplirs dans le filtre ingrédient
     if (Ingredient) {
-        r.forEach((r) => {
+        r.forEach((i) => {
             //For each time that's an ingredient
-            const { ingredient } = r; //create a second variable r for this area research
+            const { ingredient } = i; //create a second variable r for this area research
             //console.log(r.ingredient);
             const div = document.createElement("div"); //create an element div
             div.textContent = ingredient; // this div have text content all ingredients of the area research
@@ -48,7 +48,6 @@ function filtering() {
     }
     displayRecipersData(r);
     return r;
-    //declaration of const variables for three areas research
     if (Device) {
         //create an element div
         r.forEach((r) => {
@@ -146,14 +145,44 @@ function recipersFactory(data) {
     return { name, description, getRecipersCardDOM }; //return name, description and the function getRecipersCardDom
 }
 
+function recipersIngredientsFactory(data) {
+    const { ingredient } = data;
+    function getIngredientsDOM() {
+        const div = document.createElement("div");
+    }
+    return getIngredientsDOM;
+}
+function recipersDevicesFactory(data) {
+    const { appliance } = data;
+    function getDevicesDOM() {
+        const div = document.createElement("div");
+    }
+    return getDevicesDOM;
+}
+function recipersUtensilsFactory(data) {
+    const { ustensile } = data;
+    function getUtensilsDOM() {
+        const div = document.createElement("div");
+    }
+    return getUtensilsDOM;
+}
+
 function displayRecipersData(data) {
     const recipersSection = document.querySelector(".recipes");
+    /*const ingredientSection = document.querySelector(".sectionIngredient");
+    const deviceSection = document.querySelector(".sectionDevice");
+    const utensilsSection = document.querySelector(".sectionUtensil");*/
     recipersSection.innerHTML = "";
     console.log(data);
     data.forEach((recipe) => {
         const mediaModel = recipersFactory(recipe);
         const userRecipersCardDOM = mediaModel.getRecipersCardDOM();
         recipersSection.appendChild(userRecipersCardDOM);
+        /*const IngredientsModel = recipersIngredientsFactory(recipe);
+        const userIngredientsCardDOM = IngredientsModel.getIngredientsDOM();
+        ingredientSection.appendChild(userIngredientsCardDOM);
+        const Devices = recipersDevicesFactory(recipe);
+        const Utensils = recipersUtensilsFactory(recipe);*/
     });
 }
 
