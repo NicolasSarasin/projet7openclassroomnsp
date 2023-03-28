@@ -169,20 +169,20 @@ function recipersUtensilsFactory(data) {
 
 function displayRecipersData(data) {
     const recipersSection = document.querySelector(".recipes");
-    /*const ingredientSection = document.querySelector(".sectionIngredient");
+    const ingredientSection = document.querySelector(".ingredients");
     const deviceSection = document.querySelector(".sectionDevice");
-    const utensilsSection = document.querySelector(".sectionUtensil");*/
+    const utensilsSection = document.querySelector(".sectionUtensil");
     recipersSection.innerHTML = "";
     console.log(data);
     data.forEach((recipe) => {
         const mediaModel = recipersFactory(recipe);
         const userRecipersCardDOM = mediaModel.getRecipersCardDOM();
         recipersSection.appendChild(userRecipersCardDOM);
-        /*const IngredientsModel = recipersIngredientsFactory(recipe);
-        const userIngredientsCardDOM = IngredientsModel.getIngredientsDOM();
-        ingredientSection.appendChild(userIngredientsCardDOM);
-        const Devices = recipersDevicesFactory(recipe);
-        const Utensils = recipersUtensilsFactory(recipe);*/
+        /*const ingredientModel = recipersIngredientsFactory(recipe);
+        const userIngredientsCardDOM = ingredientModel.getIngredientsDOM();*/
+        //ingredientSection.appendChild(userIngredientsCardDOM);
+        //const Devices = recipersDevicesFactory(recipe);
+        //const Utensils = recipersUtensilsFactory(recipe);
     });
 }
 
