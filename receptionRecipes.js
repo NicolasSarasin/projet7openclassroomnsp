@@ -149,6 +149,7 @@ function recipersIngredientsFactory(data) {
     const { ingredient } = data;
     function getIngredientsDOM() {
         const div = document.createElement("div");
+        div.textContent = ingredient;
     }
     return getIngredientsDOM;
 }
@@ -156,13 +157,15 @@ function recipersDevicesFactory(data) {
     const { appliance } = data;
     function getDevicesDOM() {
         const div = document.createElement("div");
+        div.textContent = appliance;
     }
     return getDevicesDOM;
 }
 function recipersUtensilsFactory(data) {
-    const { ustensile } = data;
+    const { ustensils } = data;
     function getUtensilsDOM() {
         const div = document.createElement("div");
+        div.textContent = ustensils;
     }
     return getUtensilsDOM;
 }
@@ -179,10 +182,10 @@ function displayRecipersData(data) {
         const userRecipersCardDOM = mediaModel.getRecipersCardDOM();
         recipersSection.appendChild(userRecipersCardDOM);
         /*const ingredientModel = recipersIngredientsFactory(recipe);
-        const userIngredientsCardDOM = ingredientModel.getIngredientsDOM();*/
-        //ingredientSection.appendChild(userIngredientsCardDOM);
-        //const Devices = recipersDevicesFactory(recipe);
-        //const Utensils = recipersUtensilsFactory(recipe);
+        const userIngredientsCardDOM = ingredientModel.getIngredientsDOM();
+        ingredientSection.appendChild(userIngredientsCardDOM);
+        const Devices = recipersDevicesFactory(recipe);
+        const Utensils = recipersUtensilsFactory(recipe);*/
     });
 }
 
