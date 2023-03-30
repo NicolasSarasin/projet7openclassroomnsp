@@ -39,8 +39,8 @@ header img {
 }
 
 .sectionForm {
-    margin-top: 20px;
-    font-size: 26px;
+    margin-top: 25px;
+    font-size: 18px;
     /*display: flex;
     justify-content: space-between;
     flex-wrap: wrap;*/
@@ -50,7 +50,7 @@ header img {
 }
 
 .sectionForm div {
-    width: 30%;
+    /*width: 30%;*/
     white-space: nowrap;
 }
 
@@ -62,12 +62,12 @@ header img {
 }
 
 .sectionSearch form {
-    width: 200px;
     position: relative;
 }
 
 .sectionSearch .ingredient,
 .sectionSearch .ingredient .inputIngredient {
+    width: 200px;
     background-color: #3282f7;
     height: 31px;
 }
@@ -103,15 +103,15 @@ header img {
     cursor: pointer;
 }
 
-.sectionSearch:hover .ingredient:hover {
+.sectionSearch .ingredient:hover {
     min-height: 31px;
     height: 100%;
-    max-height: 460px;
+    max-height: 1400px;
     min-width: 200px;
     width: 100%;
     max-width: 750px; /*width of the area research*/
     /*min-width: 200px;*/
-    margin-bottom: -460px;
+    margin-bottom: -1400px;
     z-index: 3;
 }
 
@@ -124,6 +124,7 @@ header img {
 
 .sectionSearch .devices,
 .sectionSearch .devices .inputDevice {
+    width: 200px;
     background-color: #68d9a4;
     height: 31px;
 }
@@ -149,6 +150,7 @@ header img {
 
 .sectionSearch .utensils,
 .sectionSearch .utensils .inpUtensil {
+    width: 200px;
     background-color: #ed6454;
     height: 31px;
 }
@@ -265,6 +267,7 @@ header img {
     background-color: #d1d1d1;
     position: relative;
     cursor: pointer;
+    overflow: hidden;
 }
 
 .bottomDiv {

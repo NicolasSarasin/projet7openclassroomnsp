@@ -1,5 +1,5 @@
 window.onload = function () {
-    init(); //function init() in the window.onload
+    filtering();
 };
 
 function filtering() {
@@ -32,7 +32,7 @@ function filtering() {
     //Device.appendChild(sectionAreaResearch);
     //Utensil.appendChild(sectionAreaResearch);
     //extraire les ingrédients de la liste de recette (r) et les remplirs dans le filtre ingrédient
-    if (Ingredient) {
+    /*if (Ingredient) {
         r.forEach((i) => {
             //For each time that's an ingredient
             const { ingredient } = i; //create a second variable r for this area research
@@ -45,9 +45,28 @@ function filtering() {
         });
 
         //return r;
-    }
+    }*/
+
+    const ingredients = [];
+    r.forEach((recipe) => {
+        recipe.ingredients.forEach((ingredient) => {
+            if (ingredients.indexOf(ingredient.ingredient) < 0) {
+                ingredients.push(ingredient.ingredient);
+            }
+        });
+    });
+
+    const ingredientsList = document.getElementById("ingredientsList");
+    ingredients.forEach((ingredient) => {
+        const d = document.createElement("div");
+        d.textContent = ingredient;
+        ingredientsList.appendChild(d);
+    });
+
     displayRecipersData(r);
-    return r;
+
+    return;
+
     if (Device) {
         //create an element div
         r.forEach((r) => {
@@ -187,8 +206,4 @@ function displayRecipersData(data) {
         const Devices = recipersDevicesFactory(recipe);
         const Utensils = recipersUtensilsFactory(recipe);*/
     });
-}
-
-async function init() {
-    filtering();
 }

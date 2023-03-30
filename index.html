@@ -38,8 +38,8 @@
             /><i class="fa-solid fa-magnifying-glass"></i>
         </form>
         <div id="tagsList">
+            <!--
             <div class="Tag tagDevice">
-                <!--a tag that display an ingredient , a device or an utensil-->
                 <span class="tagText">coco</span>
                 <i
                     class="fa-regular fa-circle-xmark"
@@ -47,77 +47,46 @@
                 ></i>
             </div>
             <div class="Tag tagIngredient">
-                <!--a tag that display an ingredient , a device or an utensil-->
                 <span class="tagText">Test de text en allongé</span>
                 <i
                     class="fa-regular fa-circle-xmark"
                     onclick="closeTag(this)"
                 ></i>
             </div>
+-->
         </div>
         <section class="sectionSearch">
-            <form action="" class="ingredient" id="ingredient">
-                <input
-                    type="search"
-                    class="inputIngredient"
-                    placeholder="Ingrédients"
-                /><i class="fa fa-angle-up" id="arrow" onclick=""></i>
-                <section class="sectionForm ingredients">
+            <article class="ingredient" id="ingredient">
+                <form action="">
+                    <input
+                        type="search"
+                        class="inputIngredient"
+                        placeholder="Ingrédients"
+                    /><i class="fa fa-angle-up" id="arrow" onclick=""></i>
+
+                    <!--<h2>Ingrédients<i class="fa fa-angle-up"></i></h2>-->
+                </form>
+                <section id="ingredientsList" class="sectionForm ingredients">
                     <!--Section with a lot of tag created in Javascript or HTML-->
+                    <!--
                     <div>lait de coco</div>
                     <div>banane</div>
                     <div>huile d'olive</div>
                     <div>sucre</div>
                     <div>lait de coco</div>
-                    <!--<div>test</div>
                     <div>test</div>
-                    <div>test</div>
-                    <div>test</div>
-                    <div>test</div>
-                    <div>test</div>
-                    <div>test</div>
-                    <div>test</div>
-                    <div>test</div>
-                    <div>test</div>
-                    <div>test</div>
-                    <div>test</div>
-                    <div>test</div>
-                    <div>test</div>
-                    <div>test</div>
-                    <div>test</div>
-                    <div>test</div>
-                    <div>test</div>
-                    <div>test</div>
-                    <div>test</div>
-                    <div>test</div>
-                    <div>test</div>
-                    <div>test</div>
-                    <div>test</div>
-                    <div>test</div>
-                    <div>test</div>
-                    <div>test</div>
-                    <div>test</div>
-                    <div>test</div>
-                    <div>test</div>
-                    <div>test</div>
-                    <div>test</div>
-                    <div>test</div>
-                    <div>test</div>
-                    <div>test</div>
-                    <div>test</div>
-                    <div>test</div>
-                    <div>test</div>
-                    <div>test</div>
-                    -->
+-->
                 </section>
-                <!--<h2>Ingrédients<i class="fa fa-angle-up"></i></h2>-->
-            </form>
-            <form action="" class="devices" id="devices">
-                <input
-                    type="search"
-                    class="inputDevice"
-                    placeholder="Appareils"
-                /><i class="fa fa-angle-up" id="arrow"></i>
+            </article>
+            <article class="devices" id="devices">
+                <form action="">
+                    <input
+                        type="search"
+                        class="inputDevice"
+                        placeholder="Appareils"
+                    /><i class="fa fa-angle-up" id="arrow"></i>
+                    <!--<h2>Appareils<i class="fa fa-angle-up"></i></h2>-->
+                </form>
                 <section class="sectionForm sectionDevice">
                     <!--Section with a lot of tag created in Javascript or HTML-->
                     <div>test</div>
@@ -161,14 +130,16 @@
                     <div>test</div>
                     <div>test</div>
                 </section>
-                <!--<h2>Appareils<i class="fa fa-angle-up"></i></h2>-->
-            </form>
-            <form action="" class="utensils" id="utensils">
-                <input
-                    type="search"
-                    class="inpUtensil"
-                    placeholder="Ustensiles"
-                /><i class="fa fa-angle-up" id="arrow"></i>
+            </article>
+            <article class="utensils" id="utensils">
+                <form action="">
+                    <input
+                        type="search"
+                        class="inpUtensil"
+                        placeholder="Ustensiles"
+                    /><i class="fa fa-angle-up" id="arrow"></i>
+                    <!--<h2>Ustensiles<i class="fa fa-angle-up"></i></h2>-->
+                </form>
                 <section class="sectionForm sectionUtensil">
                     <!--Section with a lot of tag created in Javascript or HTML-->
                     <div>test</div>
@@ -212,8 +183,7 @@
                     <div>test</div>
                     <div>test</div>
                 </section>
-                <!--<h2>Ustensiles<i class="fa fa-angle-up"></i></h2>-->
-            </form>
+            </article>
         </section>
         <section class="recipes">
             <article class="mainDiv">
