@@ -59,8 +59,34 @@ function filtering() {
     const ingredientsList = document.getElementById("ingredientsList");
     ingredients.forEach((ingredient) => {
         const d = document.createElement("div");
+        d.className = "tag";
         d.textContent = ingredient;
         ingredientsList.appendChild(d);
+    });
+
+    //const appliance;
+    const applianceList = document.getElementById("applianceList");
+    /*r.forEach((recipes) => {
+        recipes.appliance.forEach((appliance) => {
+            //if appliance.indexOf(ustensil.ustensil) < 0
+        });
+    });*/
+
+    const ustensils = [];
+    r.forEach((recipe) => {
+        recipe.ustensils.forEach((ustensil) => {
+            if (ustensils.indexOf(ustensil.ustensil) < 0) {
+                ustensils.push(ustensil.ustensil);
+            }
+        });
+    });
+
+    const ustensilsList = document.getElementById("ustensilsList");
+    ustensils.forEach((ustensil) => {
+        const d = document.createElement("div");
+        d.className = "tag";
+        d.textContent = ustensil;
+        ustensilsList.appendChild(d);
     });
 
     displayRecipersData(r);
