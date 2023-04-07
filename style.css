@@ -50,7 +50,7 @@ header img {
 }
 
 .sectionForm div {
-    /*width: 30%;*/
+    width: 30%;
     white-space: nowrap;
 }
 
@@ -106,7 +106,7 @@ header img {
 .sectionSearch .ingredient:hover {
     min-height: 31px;
     height: 100%;
-    max-height: 1400px;
+    /*max-height: 1400px;*/
     min-width: 200px;
     width: 100%;
     max-width: 800px; /*width of the area research*/
@@ -132,7 +132,7 @@ header img {
 .sectionSearch .devices:hover {
     min-height: 31px;
     height: 100%;
-    max-height: 460px;
+    /*max-height: 460px;*/
     min-width: 200px;
     width: 100%;
     max-width: 800px; /*width of the area research*/

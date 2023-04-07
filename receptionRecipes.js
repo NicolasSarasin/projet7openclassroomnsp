@@ -57,67 +57,90 @@ function filtering() {
     });
 
     const ingredientsList = document.getElementById("ingredientsList");
+    ingredientsList.innerHTML = "";
     ingredients.forEach((ingredient) => {
         const d = document.createElement("div");
         d.className = "tag";
         d.textContent = ingredient;
         ingredientsList.appendChild(d);
+        d.onclick = function () {
+            filteringTagIngredient(this);
+        };
     });
 
-    //const appliance;
-    const applianceList = document.getElementById("applianceList");
-    /*r.forEach((recipes) => {
-        recipes.appliance.forEach((appliance) => {
-            //if appliance.indexOf(ustensil.ustensil) < 0
-        });
-    });*/
-
-    const ustensils = [];
+    const appliances = [];
     r.forEach((recipe) => {
+        if (appliances.indexOf(recipe.appliance) < 0) {
+            appliances.push(recipe.appliance);
+        }
+    });
+    const applianceList = document.getElementById("appliancesList");
+    applianceList.innerHTML = "";
+    appliances.forEach((appliance) => {
+        const d = document.createElement("div");
+        d.className = "tag";
+        d.textContent = appliance;
+        applianceList.appendChild(d);
+        d.onclick = function () {
+            filteringTagApplience(this);
+        };
+    });
+
+    const ustensils = []; // this constante have an array
+    r.forEach((recipe) => {
+        //for each recipe that take
         recipe.ustensils.forEach((ustensil) => {
-            if (ustensils.indexOf(ustensil.ustensil) < 0) {
-                ustensils.push(ustensil.ustensil);
+            if (ustensils.indexOf(ustensil) < 0) {
+                ustensils.push(ustensil);
             }
         });
     });
 
     const ustensilsList = document.getElementById("ustensilsList");
+    ustensilsList.innerHTML = "";
     ustensils.forEach((ustensil) => {
         const d = document.createElement("div");
         d.className = "tag";
-        d.textContent = ustensil;
+        d.textContent = ustensil; //there balises div have an ustensil to display
         ustensilsList.appendChild(d);
+        d.onclick = function () {
+            filteringTagUstensil(this);
+        };
     });
 
     displayRecipersData(r);
 
     return;
-
-    if (Device) {
-        //create an element div
-        r.forEach((r) => {
-            const { appliance } = r;
-            /*const { appliance } = r;*/
-            const div = document.createElement("div"); //create a second variable r for this area research
-            div.textContent = appliance; // this div have text content all appliances of the area research
-        });
-        //sectionIngredient.appendChild(div);
-        //return r;
-    } else {
-        r.forEach((r) => {
-            const { ustensils } = r;
-            /*const { ustensils } = data;*/
-            //create an element div
-            const div = document.createElement("div");
-            div.textContent = ustensils; // this div have text content all ustensils of the area research
-            //sectionIngredient.appendChild(div);
-        });
-        //return r;
-    }
     //div.className = "tagIngredient";
     //div.className = "tagDevice";
     //div.className = "tagUtensil";
     //extraire les appareils et les ustensils de la liste de recette (r) et les remplirs dans le filtre appareil et ustensile
+}
+
+function filteringTag(elt, className) {
+    const SectionDivTags = document.getElementById(".tagsList");
+    const tagDiv = document.createElement("div");
+    tagDiv.className = className;
+    tagDiv.textContent = elt;
+    //tagDiv.style.dysplay = "block";
+    const icon = document.createElement("i");
+    icon.className = "fa-regular fa-circle-xmark";
+    icon.onclick = function () {
+        closeTag(this);
+    };
+    SectionDivTags.appendChild(tagDiv);
+}
+
+function filteringTagIngredient(elt) {
+    filteringTag(elt, "tagIngredient");
+}
+
+function filteringTagDevice(elt) {
+    filteringTag(elt, "tagDevice");
+}
+
+function filteringTagUstensil(elt) {
+    filteringTag(elt, "tagUtensil");
 }
 
 function closeTag(elt) {
@@ -226,10 +249,5 @@ function displayRecipersData(data) {
         const mediaModel = recipersFactory(recipe);
         const userRecipersCardDOM = mediaModel.getRecipersCardDOM();
         recipersSection.appendChild(userRecipersCardDOM);
-        /*const ingredientModel = recipersIngredientsFactory(recipe);
-        const userIngredientsCardDOM = ingredientModel.getIngredientsDOM();
-        ingredientSection.appendChild(userIngredientsCardDOM);
-        const Devices = recipersDevicesFactory(recipe);
-        const Utensils = recipersUtensilsFactory(recipe);*/
     });
 }
