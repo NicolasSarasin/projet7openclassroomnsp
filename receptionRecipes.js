@@ -118,29 +118,30 @@ function filtering() {
 }
 
 function filteringTag(elt, className) {
-    const SectionDivTags = document.getElementById(".tagsList");
+    const SectionDivTags = document.getElementById("tagsList");
     const tagDiv = document.createElement("div");
+    const icon = document.createElement("i");
+    icon.className = "fa-regular fa-circle-xmark";
     tagDiv.className = className;
     tagDiv.textContent = elt;
     //tagDiv.style.dysplay = "block";
-    const icon = document.createElement("i");
-    icon.className = "fa-regular fa-circle-xmark";
     icon.onclick = function () {
         closeTag(this);
     };
+    tagDiv.appendChild(icon);
     SectionDivTags.appendChild(tagDiv);
 }
 
 function filteringTagIngredient(elt) {
-    filteringTag(elt, "tagIngredient");
+    filteringTag(elt, "Tag tagIngredient");
 }
 
-function filteringTagDevice(elt) {
-    filteringTag(elt, "tagDevice");
+function filteringTagApplience(elt) {
+    filteringTag(elt, "Tag tagDevice");
 }
 
 function filteringTagUstensil(elt) {
-    filteringTag(elt, "tagUtensil");
+    filteringTag(elt, "Tag tagUtensil");
 }
 
 function closeTag(elt) {
