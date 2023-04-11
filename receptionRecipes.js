@@ -120,14 +120,16 @@ function filtering() {
 function filteringTag(elt, className) {
     const SectionDivTags = document.getElementById("tagsList");
     const tagDiv = document.createElement("div");
+    elt = document.createElement("span");
     const icon = document.createElement("i");
     icon.className = "fa-regular fa-circle-xmark";
     tagDiv.className = className;
-    tagDiv.textContent = elt;
+    elt.textContent = " test "; //string
     //tagDiv.style.dysplay = "block";
     icon.onclick = function () {
         closeTag(this);
     };
+    tagDiv.appendChild(elt);
     tagDiv.appendChild(icon);
     SectionDivTags.appendChild(tagDiv);
 }
