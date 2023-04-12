@@ -120,11 +120,11 @@ function filtering() {
 function filteringTag(elt, className) {
     const SectionDivTags = document.getElementById("tagsList");
     const tagDiv = document.createElement("div");
-    elt = document.createElement("span");
+    elt.string = document.createElement("span");
     const icon = document.createElement("i");
     icon.className = "fa-regular fa-circle-xmark";
     tagDiv.className = className;
-    elt.textContent = " test "; //string
+    elt.string.textContent = elt.string + " "; //string
     //tagDiv.style.dysplay = "block";
     icon.onclick = function () {
         closeTag(this);
@@ -150,6 +150,7 @@ function closeTag(elt) {
     //function to close tag (exemple:sugar)
     const tag = elt.parentElement;
     tag.parentElement.removeChild(tag);
+    filtering();
 }
 
 function recipersFactory(data) {
