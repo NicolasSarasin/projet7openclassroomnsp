@@ -22,6 +22,45 @@ function filtering() {
             }
         }
     }
+
+    const tagIngredients = [];
+    const tagDevices = [];
+    const tagUstensils = [];
+    const tagsList = document.getElementById("tagsList");
+    for (var j = 0; j < tagsList.children.length; j++) {
+        const tagValue = tagsList.children[j].children[0].textContent;
+        if (tagsList.children[j].classList.contains("tagIngredient")) {
+            tagIngredients.push(tagValue);
+            for (var i = r.length - 1; i >= 0; i--) {
+                if (
+                    !r[i].ingredients.some(
+                        (ingredient) =>
+                            ingredient.ingredient.indexOf(tagValue) >= 0
+                    )
+                ) {
+                    //we delete the recipe of the array r
+                    r.splice(i, 1);
+                }
+            }
+        } else if (tagsList.children[j].classList.contains("tagDevice")) {
+            tagDevices.push(tagValue);
+            for (var i = r.length - 1; i >= 0; i--) {
+                if (r[i].appliance != tagValue) {
+                    //we delete the recipe of the array r
+                    r.splice(i, 1);
+                }
+            }
+        } else if (tagsList.children[j].classList.contains("tagUtensil")) {
+            tagUstensils.push(tagValue);
+            for (var i = r.length - 1; i >= 0; i--) {
+                if (!r[i].ustensils.includes(tagValue)) {
+                    //we delete the recipe of the array r
+                    r.splice(i, 1);
+                }
+            }
+        }
+    }
+
     const Ingredient = document.getElementById("ingredient");
     const Device = document.getElementById("devices");
     const Utensil = document.getElementById("utensils");
@@ -50,7 +89,10 @@ function filtering() {
     const ingredients = [];
     r.forEach((recipe) => {
         recipe.ingredients.forEach((ingredient) => {
-            if (ingredients.indexOf(ingredient.ingredient) < 0) {
+            if (
+                !ingredients.includes(ingredient.ingredient) &&
+                !tagIngredients.includes(ingredient.ingredient)
+            ) {
                 ingredients.push(ingredient.ingredient);
             }
         });
@@ -90,7 +132,11 @@ function filtering() {
     r.forEach((recipe) => {
         //for each recipe that take
         recipe.ustensils.forEach((ustensil) => {
-            if (ustensils.indexOf(ustensil) < 0) {
+            if (
+                !ustensils.includes(ustensil) &&
+                !tagUstensils.includes(ustensil)
+            ) {
+                //(!ustensils.includes(ustensil)) && (!tagUtensil.includes(utensil))
                 ustensils.push(ustensil);
             }
         });
@@ -119,19 +165,19 @@ function filtering() {
 
 function filteringTag(elt, className) {
     const SectionDivTags = document.getElementById("tagsList");
+    const tag = document.createElement("div");
     const tagDiv = document.createElement("div");
-    elt.string = document.createElement("span");
+    tagDiv.textContent = elt.textContent;
     const icon = document.createElement("i");
     icon.className = "fa-regular fa-circle-xmark";
-    tagDiv.className = className;
-    elt.string.textContent = elt.string + " "; //string
-    //tagDiv.style.dysplay = "block";
+    tag.className = className;
     icon.onclick = function () {
         closeTag(this);
     };
-    tagDiv.appendChild(elt);
-    tagDiv.appendChild(icon);
-    SectionDivTags.appendChild(tagDiv);
+    tag.appendChild(tagDiv);
+    tag.appendChild(icon);
+    SectionDivTags.appendChild(tag);
+    filtering();
 }
 
 function filteringTagIngredient(elt) {
