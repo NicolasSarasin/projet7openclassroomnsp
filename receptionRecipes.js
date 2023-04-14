@@ -112,7 +112,11 @@ function filtering() {
 
     const appliances = [];
     r.forEach((recipe) => {
-        if (appliances.indexOf(recipe.appliance) < 0) {
+        if (
+            !appliances.includes(recipe.appliance) &&
+            !tagDevices.includes(recipe.appliance)
+        ) {
+            //(!appliances.includes(appliance)) && (!tagDevice.includes(appliance))
             appliances.push(recipe.appliance);
         }
     });
@@ -136,7 +140,6 @@ function filtering() {
                 !ustensils.includes(ustensil) &&
                 !tagUstensils.includes(ustensil)
             ) {
-                //(!ustensils.includes(ustensil)) && (!tagUtensil.includes(utensil))
                 ustensils.push(ustensil);
             }
         });
