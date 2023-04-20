@@ -3,23 +3,20 @@ window.onload = function () {
 };
 
 function filtering() {
-    const r = [...recipes];
+    let r = [...recipes];
     const searchValue = document.getElementById("searchIngredient").value;
     //if the research lenght have 3 caracters
     if (searchValue.length >= 3) {
         // loop through receipies in (r) to exclude the ones which don't match (searchValue)
-        r.forEach((recipes) => {
-            if (
-                recipes.name.indexOf(searchValue) < 0 &&
-                recipes.description.indexOf(searchValue) < 0 &&
-                !recipes.ingredients.some((ingredient) => {
-                    const ok = ingredient.ingredient.indexOf(searchValue) >= 0;
-                    return ok;
-                })
-            ) {
-                //we delete the recipe of the array r
-                r.splice(i, 1);
-            }
+        r = r.filter((recipe) => {
+            return (
+                recipe.name.indexOf(searchValue) >= 0 ||
+                recipe.description.indexOf(searchValue) >= 0 ||
+                recipe.ingredients.some(
+                    (ingredient) =>
+                        ingredient.ingredient.indexOf(searchValue) >= 0
+                )
+            );
         });
     }
 
@@ -27,37 +24,21 @@ function filtering() {
     const tagDevices = [];
     const tagUstensils = [];
     const tagsList = document.getElementById("tagsList");
-    tagsList.children.forEach((r) => {
-        const tagValue = tagsList.children[j].children[0].textContent;
-        if (tagsList.children[j].classList.contains("tagIngredient")) {
+    Array.from(tagsList.children).forEach((c) => {
+        const tagValue = c.children[0].textContent;
+        if (c.classList.contains("tagIngredient")) {
             tagIngredients.push(tagValue);
-            tagIngredients.forEach((r) => {
-                if (
-                    !r[i].ingredients.some(
-                        (ingredient) =>
-                            ingredient.ingredient.indexOf(tagValue) >= 0
-                    )
-                ) {
-                    //we delete the recipe of the array r
-                    r.splice(i, 1);
-                }
-            });
+            r = r.filter((recipe) =>
+                recipe.ingredients.some(
+                    (ing) => ing.ingredient.indexOf(tagValue) >= 0
+                )
+            );
         } else if (tagsList.children[j].classList.contains("tagDevice")) {
             tagDevices.push(tagValue);
-            tagDevices.forEach((r) => {
-                if (r[i].appliance != tagValue) {
-                    //we delete the recipe of the array r
-                    r.splice(i, 1);
-                }
-            });
+            r = r.filter((recipe) => recipe.appliance == tagValue);
         } else if (tagsList.children[j].classList.contains("tagUtensil")) {
             tagUstensils.push(tagValue);
-            tagUstensils.forEach((r) => {
-                if (!r[i].ustensils.includes(tagValue)) {
-                    //we delete the recipe of the array r
-                    r.splice(i, 1);
-                }
-            });
+            r = r.filter((recipe) => recipe.ustensils.includes(tagValue));
         }
     });
 
@@ -87,6 +68,8 @@ function filtering() {
     }*/
 
     const ingredients = [];
+    const inputIngredient = document.getElementById("inputIngredient").value;
+
     r.forEach((recipe) => {
         recipe.ingredients.forEach((ingredient) => {
             if (
@@ -109,6 +92,19 @@ function filtering() {
             filteringTagIngredient(this);
         };
     });
+
+    if (inputIngredient.length >= 3) {
+        r = r.filter((recipe) => {
+            return (
+                recipe.name.indexOf(inputIngredient) >= 0 ||
+                recipe.description.indexOf(inputIngredient) >= 0 ||
+                recipe.ingredients.some(
+                    (ingredient) =>
+                        ingredient.ingredient.indexOf(inputIngredient) >= 0
+                )
+            );
+        });
+    }
 
     const appliances = [];
     r.forEach((recipe) => {
