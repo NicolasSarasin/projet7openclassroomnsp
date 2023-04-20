@@ -87,20 +87,20 @@ function filtering() {
     }*/
 
     const ingredients = [];
-    r.forEach((recipe) => {
-        recipe.ingredients.forEach((ingredient) => {
+    for (var i = 0; i < r.length; i++) {
+        for (var j = 0; j < r.ingredients.length; j++) {
             if (
                 !ingredients.includes(ingredient.ingredient) &&
                 !tagIngredients.includes(ingredient.ingredient)
             ) {
                 ingredients.push(ingredient.ingredient);
             }
-        });
-    });
+        }
+    } //for(var i = 0; i<ingredients.length; i++)
 
     const ingredientsList = document.getElementById("ingredientsList");
     ingredientsList.innerHTML = "";
-    ingredients.forEach((ingredient) => {
+    for (var i = 0; i < ingredients.length; i++) {
         const d = document.createElement("div");
         d.className = "tag";
         d.textContent = ingredient;
@@ -108,10 +108,10 @@ function filtering() {
         d.onclick = function () {
             filteringTagIngredient(this);
         };
-    });
+    }
 
     const appliances = [];
-    r.forEach((recipe) => {
+    for (var i = 0; i < r.length; i++) {
         if (
             !appliances.includes(recipe.appliance) &&
             !tagDevices.includes(recipe.appliance)
@@ -119,7 +119,7 @@ function filtering() {
             //(!appliances.includes(appliance)) && (!tagDevice.includes(appliance))
             appliances.push(recipe.appliance);
         }
-    });
+    }
     const applianceList = document.getElementById("appliancesList");
     applianceList.innerHTML = "";
     appliances.forEach((appliance) => {
@@ -133,7 +133,7 @@ function filtering() {
     });
 
     const ustensils = []; // this constante have an array
-    r.forEach((recipe) => {
+    for (var i = 0; i < r.length; i++) {
         //for each recipe that take
         recipe.ustensils.forEach((ustensil) => {
             if (
@@ -143,7 +143,7 @@ function filtering() {
                 ustensils.push(ustensil);
             }
         });
-    });
+    }
 
     const ustensilsList = document.getElementById("ustensilsList");
     ustensilsList.innerHTML = "";
