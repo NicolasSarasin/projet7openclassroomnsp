@@ -100,7 +100,7 @@ function filtering() {
 
     const ingredientsList = document.getElementById("ingredientsList");
     ingredientsList.innerHTML = "";
-    for (var i = 0; i < ingredients.length; i++) {
+    for (var i = 0; i < ingredients.ingredient.length; i++) {
         const d = document.createElement("div");
         d.className = "tag";
         d.textContent = ingredient;
@@ -122,7 +122,7 @@ function filtering() {
     }
     const applianceList = document.getElementById("appliancesList");
     applianceList.innerHTML = "";
-    appliances.forEach((appliance) => {
+    for (var i = 0; i < appliances.appliance.length; i++) {
         const d = document.createElement("div");
         d.className = "tag";
         d.textContent = appliance;
@@ -130,24 +130,24 @@ function filtering() {
         d.onclick = function () {
             filteringTagApplience(this);
         };
-    });
+    }
 
     const ustensils = []; // this constante have an array
     for (var i = 0; i < r.length; i++) {
         //for each recipe that take
-        recipe.ustensils.forEach((ustensil) => {
+        for (var i = 0; i < r.ustensils.length; i++) {
             if (
                 !ustensils.includes(ustensil) &&
                 !tagUstensils.includes(ustensil)
             ) {
                 ustensils.push(ustensil);
             }
-        });
+        }
     }
 
     const ustensilsList = document.getElementById("ustensilsList");
     ustensilsList.innerHTML = "";
-    ustensils.forEach((ustensil) => {
+    for (var j = 0; j < ustensils.ustensil; j++) {
         const d = document.createElement("div");
         d.className = "tag";
         d.textContent = ustensil; //there balises div have an ustensil to display
@@ -155,7 +155,7 @@ function filtering() {
         d.onclick = function () {
             filteringTagUstensil(this);
         };
-    });
+    }
 
     displayRecipersData(r);
 

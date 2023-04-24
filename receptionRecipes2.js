@@ -107,6 +107,7 @@ function filtering() {
     }
 
     const appliances = [];
+    const inputAppliances = document.getElementById("inputDevice").value;
     r.forEach((recipe) => {
         if (
             !appliances.includes(recipe.appliance) &&
@@ -129,6 +130,7 @@ function filtering() {
     });
 
     const ustensils = []; // this constante have an array
+    const inpUstensils = document.getElementById("inpUtensil").value;
     r.forEach((recipe) => {
         //for each recipe that take
         recipe.ustensils.forEach((ustensil) => {
