@@ -128,6 +128,18 @@ function filtering() {
             filteringTagApplience(this);
         };
     });
+    if (inputAppliances.length >= 3) {
+        r = r.filter((recipe) => {
+            return (
+                recipe.name.indexOf(inputAppliances) >= 0 ||
+                recipe.description.indexOf(inputAppliances) >= 0 ||
+                recipe.appliance.some(
+                    (appliance) =>
+                        appliance.appliance.indexOf(inputAppliances) >= 0
+                )
+            );
+        });
+    }
 
     const ustensils = []; // this constante have an array
     const inpUstensils = document.getElementById("inpUtensil").value;
@@ -154,7 +166,17 @@ function filtering() {
             filteringTagUstensil(this);
         };
     });
-
+    if (inpUstensils.length >= 3) {
+        r = r.filter((recipe) => {
+            return (
+                recipe.name.indexOf(inpUstensils) >= 0 ||
+                recipe.description.indexOf(inpUstensils) >= 0 ||
+                recipe.ustensils.some(
+                    (ustensils) => ustensils.ustensil.indexOf(inpUstensils) >= 0
+                )
+            );
+        });
+    }
     displayRecipersData(r);
 
     return;

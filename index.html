@@ -63,6 +63,7 @@
                         class="inputIngredient"
                         id="inputIngredient"
                         placeholder="Ingrédients"
+                        oninput="filterIngredients(this.value)"
                     /><i class="fa fa-angle-up" id="arrow" onclick=""></i>
 
                     <!--<h2>Ingrédients<i class="fa fa-angle-up"></i></h2>-->
@@ -86,6 +87,7 @@
                         class="inputDevice"
                         id="inputDevice"
                         placeholder="Appareils"
+                        oninput="filterAppliences(this.value)"
                     /><i class="fa fa-angle-up" id="arrow"></i>
                     <!--<h2>Appareils<i class="fa fa-angle-up"></i></h2>-->
                 </form>
@@ -100,6 +102,7 @@
                         class="inpUtensil"
                         id="inpUtensil"
                         placeholder="Ustensiles"
+                        oninput="filterUstensils(this.value)"
                     /><i class="fa fa-angle-up" id="arrow"></i>
                     <!--<h2>Ustensiles<i class="fa fa-angle-up"></i></h2>-->
                 </form>
@@ -119,7 +122,7 @@
                 </div>
             </article>
         </section>
-        <script src="receptionRecipes2.js"></script>
+        <script src="receptionRecipes.js"></script>
         <script src="recipes.js"></script>
     </body>
 </html>
