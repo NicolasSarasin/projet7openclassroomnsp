@@ -186,6 +186,94 @@ function filtering() {
     //extraire les appareils et les ustensils de la liste de recette (r) et les remplirs dans le filtre appareil et ustensile
 }
 
+let ingredients = [];
+let appliances = [];
+let ustensils = [];
+
+function displayIngredients(list) {
+    const ingredientsList = document.getElementById("ingredientsList");
+    ingredientsList.innerHTML = "";
+    ingredients.forEach((list) => {
+        const d = document.createElement("div");
+        d.className = "tag";
+        d.textContent = list[i];
+        ingredientsList.appendChild(d);
+        d.onclick = function () {
+            filteringTagIngredient(this);
+        };
+    });
+}
+
+function displayAppliences(list) {
+    const applianceList = document.getElementById("appliancesList");
+    applianceList.innerHTML = "";
+    appliances.forEach((list) => {
+        const d = document.createElement("div");
+        d.className = "tag";
+        d.textContent = list[i];
+        applianceList.appendChild(d);
+        d.onclick = function () {
+            filteringTagApplience(this);
+        };
+    });
+}
+
+function displayUstensils(list) {
+    const ustensilsList = document.getElementById("ustensilsList");
+    ustensilsList.innerHTML = "";
+    ustensils.forEach((list) => {
+        const d = document.createElement("div");
+        d.className = "tag";
+        d.textContent = list[i]; //there balises div have an ustensil to display
+        ustensilsList.appendChild(d);
+        d.onclick = function () {
+            filteringTagUstensil(this);
+        };
+    });
+}
+
+function filterIngredients(txt) {
+    let list = [];
+    if (txt == "") {
+        list = [...ingredients];
+    } else {
+        for (var i = 0; i < ingredients.length; i++) {
+            if (ingredients[i].includes(txt)) {
+                list.push(ingredients[i]);
+            }
+        }
+    }
+    displayIngredients(list);
+}
+
+function filterAppliences(txt) {
+    let list = [];
+    if (txt == "") {
+        list = [...appliances];
+    } else {
+        for (var i = 0; i < appliances.length; i++) {
+            if (appliances[i].includes(txt)) {
+                list.push(appliances[i]);
+            }
+        }
+    }
+    displayAppliences(list);
+}
+
+function filterUstensils(txt) {
+    let list = [];
+    if (txt == "") {
+        list = [...ustensils];
+    } else {
+        for (var i = 0; i < ustensils.length; i++) {
+            if (ustensils[i].includes(txt)) {
+                list.push(ustensils[i]);
+            }
+        }
+    }
+    displayUstensils(list);
+}
+
 function filteringTag(elt, className) {
     const SectionDivTags = document.getElementById("tagsList");
     const tag = document.createElement("div");
