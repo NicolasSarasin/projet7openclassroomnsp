@@ -237,11 +237,11 @@ function filterIngredients(txt) {
     if (txt == "") {
         list = [...ingredients];
     } else {
-        for (var i = 0; i < ingredients.length; i++) {
-            if (ingredients[i].includes(txt)) {
-                list.push(ingredients[i]);
+        list.forEach((ingredient) => {
+            if (ingredients[ingredient].includes(txt)) {
+                list.push(ingredients[ingredient]);
             }
-        }
+        });
     }
     displayIngredients(list);
 }
@@ -251,11 +251,11 @@ function filterAppliences(txt) {
     if (txt == "") {
         list = [...appliances];
     } else {
-        for (var i = 0; i < appliances.length; i++) {
-            if (appliances[i].includes(txt)) {
-                list.push(appliances[i]);
+        list.forEach((appliance) => {
+            if (appliances[appliance].includes(txt)) {
+                list.push(appliances[appliance]);
             }
-        }
+        });
     }
     displayAppliences(list);
 }
@@ -265,11 +265,11 @@ function filterUstensils(txt) {
     if (txt == "") {
         list = [...ustensils];
     } else {
-        for (var i = 0; i < ustensils.length; i++) {
-            if (ustensils[i].includes(txt)) {
-                list.push(ustensils[i]);
+        list.forEach((ustensil) => {
+            if (ustensils[ustensil].includes(txt)) {
+                list.push(ustensils[ustensil]);
             }
-        }
+        });
     }
     displayUstensils(list);
 }
