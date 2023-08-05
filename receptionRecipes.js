@@ -133,10 +133,6 @@ function filtering() {
     displayRecipersData(r);
 
     return;
-    //div.className = "tagIngredient";
-    //div.className = "tagDevice";
-    //div.className = "tagUtensil";
-    //extraire les appareils et les ustensils de la liste de recette (r) et les remplirs dans le filtre appareil et ustensile
 }
 
 let ingredients = [];
