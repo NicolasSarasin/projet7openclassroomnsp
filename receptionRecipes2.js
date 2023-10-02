@@ -33,10 +33,10 @@ function filtering() {
                     (ing) => ing.ingredient.indexOf(tagValue) >= 0
                 )
             );
-        } else if (tagsList.children[j].classList.contains("tagDevice")) {
+        } else if (c.classList.contains("tagDevice")) {
             tagDevices.push(tagValue);
             r = r.filter((recipe) => recipe.appliance == tagValue);
-        } else if (tagsList.children[j].classList.contains("tagUtensil")) {
+        } else if (c.classList.contains("tagUtensil")) {
             tagUstensils.push(tagValue);
             r = r.filter((recipe) => recipe.ustensils.includes(tagValue));
         }
