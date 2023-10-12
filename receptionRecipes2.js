@@ -190,13 +190,13 @@ let ingredients = [];
 let appliances = [];
 let ustensils = [];
 
-function displayIngredients(list) {
+function displayIngredients(listing) {
     const ingredientsList = document.getElementById("ingredientsList");
     ingredientsList.innerHTML = "";
     ingredients.forEach((list) => {
         const d = document.createElement("div");
         d.className = "tag";
-        d.textContent = list[i];
+        d.textContent = listing[list];
         ingredientsList.appendChild(d);
         d.onclick = function () {
             filteringTagIngredient(this);
@@ -204,13 +204,13 @@ function displayIngredients(list) {
     });
 }
 
-function displayAppliences(list) {
+function displayAppliences(listing) {
     const applianceList = document.getElementById("appliancesList");
     applianceList.innerHTML = "";
     appliances.forEach((list) => {
         const d = document.createElement("div");
         d.className = "tag";
-        d.textContent = list[i];
+        d.textContent = listing[list];
         applianceList.appendChild(d);
         d.onclick = function () {
             filteringTagApplience(this);
@@ -218,13 +218,13 @@ function displayAppliences(list) {
     });
 }
 
-function displayUstensils(list) {
+function displayUstensils(listing) {
     const ustensilsList = document.getElementById("ustensilsList");
     ustensilsList.innerHTML = "";
     ustensils.forEach((list) => {
         const d = document.createElement("div");
         d.className = "tag";
-        d.textContent = list[i]; //there balises div have an ustensil to display
+        d.textContent = listing[list]; //there balises div have an ustensil to display
         ustensilsList.appendChild(d);
         d.onclick = function () {
             filteringTagUstensil(this);
