@@ -67,8 +67,8 @@ function filtering() {
         //return r;
     }*/
 
-    const ingredients = [];
-    const inputIngredient = document.getElementById("inputIngredient").value;
+    ingredients = [];
+    let inputIngredient = document.getElementById("inputIngredient").value;
 
     r.forEach((recipe) => {
         recipe.ingredients.forEach((ingredient) => {
@@ -106,8 +106,8 @@ function filtering() {
         });
     }
 
-    const appliances = [];
-    const inputAppliances = document.getElementById("inputDevice").value;
+    appliances = [];
+    let inputAppliances = document.getElementById("inputDevice").value;
     r.forEach((recipe) => {
         if (
             !appliances.includes(recipe.appliance) &&
@@ -141,8 +141,8 @@ function filtering() {
         });
     }
 
-    const ustensils = []; // this constante have an array
-    const inpUstensils = document.getElementById("inpUtensil").value;
+    ustensils = []; // this constante have an array
+    let inpUstensils = document.getElementById("inpUtensil").value;
     r.forEach((recipe) => {
         //for each recipe that take
         recipe.ustensils.forEach((ustensil) => {
@@ -190,13 +190,13 @@ let ingredients = [];
 let appliances = [];
 let ustensils = [];
 
-function displayIngredients(listing) {
+function displayIngredients(list) {
     const ingredientsList = document.getElementById("ingredientsList");
     ingredientsList.innerHTML = "";
-    ingredients.forEach((list) => {
+    list.forEach((ingredient) => {
         const d = document.createElement("div");
         d.className = "tag";
-        d.textContent = listing[list];
+        d.textContent = ingredient;
         ingredientsList.appendChild(d);
         d.onclick = function () {
             filteringTagIngredient(this);
@@ -204,13 +204,13 @@ function displayIngredients(listing) {
     });
 }
 
-function displayAppliences(listing) {
+function displayAppliences(list) {
     const applianceList = document.getElementById("appliancesList");
     applianceList.innerHTML = "";
-    appliances.forEach((list) => {
+    list.forEach((appliance) => {
         const d = document.createElement("div");
         d.className = "tag";
-        d.textContent = listing[list];
+        d.textContent = appliance;
         applianceList.appendChild(d);
         d.onclick = function () {
             filteringTagApplience(this);
@@ -218,13 +218,13 @@ function displayAppliences(listing) {
     });
 }
 
-function displayUstensils(listing) {
+function displayUstensils(list) {
     const ustensilsList = document.getElementById("ustensilsList");
     ustensilsList.innerHTML = "";
-    ustensils.forEach((list) => {
+    list.forEach((ustensil) => {
         const d = document.createElement("div");
         d.className = "tag";
-        d.textContent = listing[list]; //there balises div have an ustensil to display
+        d.textContent = ustensil; //there balises div have an ustensil to display
         ustensilsList.appendChild(d);
         d.onclick = function () {
             filteringTagUstensil(this);
@@ -237,9 +237,9 @@ function filterIngredients(txt) {
     if (txt == "") {
         list = [...ingredients];
     } else {
-        list.forEach((ingredient) => {
-            if (ingredients[ingredient].includes(txt)) {
-                list.push(ingredients[ingredient]);
+        ingredients.forEach((ingredient) => {
+            if (ingredient.includes(txt)) {
+                list.push(ingredient);
             }
         });
     }
@@ -251,9 +251,9 @@ function filterAppliences(txt) {
     if (txt == "") {
         list = [...appliances];
     } else {
-        list.forEach((appliance) => {
-            if (appliances[appliance].includes(txt)) {
-                list.push(appliances[appliance]);
+        appliances.forEach((appliance) => {
+            if (appliance.includes(txt)) {
+                list.push(appliance);
             }
         });
     }
@@ -265,9 +265,9 @@ function filterUstensils(txt) {
     if (txt == "") {
         list = [...ustensils];
     } else {
-        list.forEach((ustensil) => {
-            if (ustensils[ustensil].includes(txt)) {
-                list.push(ustensils[ustensil]);
+        ustensils.forEach((ustensil) => {
+            if (ustensil.includes(txt)) {
+                list.push(ustensil);
             }
         });
     }
